@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-DevOps/TrunkBasedDevelopment/Overview" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">Trunk Based Development (TBD) | Knowledge Base</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="http://localhost:8000/docs/DevOps/TrunkBasedDevelopment/Overview"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Trunk Based Development (TBD) | Knowledge Base"><meta data-rh="true" name="description" content="Understanding"><meta data-rh="true" property="og:description" content="Understanding"><link data-rh="true" rel="canonical" href="http://localhost:8000/docs/DevOps/TrunkBasedDevelopment/Overview"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/DevOps/TrunkBasedDevelopment/Overview" hreflang="en"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/DevOps/TrunkBasedDevelopment/Overview" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Knowledge Base RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Knowledge Base Atom Feed"><link rel="stylesheet" href="/assets/css/styles.c2084c17.css">
+<script src="/assets/js/runtime~main.37b74131.js" defer="defer"></script>
+<script src="/assets/js/main.68f49705.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Home Page</b></a><a class="navbar__item navbar__link" href="/docs/category/fundamentals">AI HUB</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/category/continousintergration">DevOps</a><a class="navbar__item navbar__link" href="/blog">Authors</a></div><div class="navbar__items navbar__items--right"><a href="https://sudeeparyan.github.io/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Webiste<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input"><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/continousintergration">ContinousIntergration</a><button aria-label="Expand sidebar category &#x27;ContinousIntergration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/docker">Docker</a><button aria-label="Expand sidebar category &#x27;Docker&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/trunkbaseddevelopment">TrunkBasedDevelopment</a><button aria-label="Collapse sidebar category &#x27;TrunkBasedDevelopment&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/DevOps/TrunkBasedDevelopment/Overview">Trunk Based Development (TBD)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/DevOps/TrunkBasedDevelopment/ReleaseProcess">ReleaseProcess</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/kubernites">Kubernites</a><button aria-label="Expand sidebar category &#x27;Kubernites&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/AcceptanceTable">AcceptanceTable</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/AdoptionProcess">AdoptionProcess</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/DeploymentAutomation">DeploymentAutomation</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/GITVersionControl">GITVersionControl</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/MeasuringSoftwareEngineeringPractics">MeasuringSoftwareEngineeringPractics</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/TestAutomation">TestAutomation</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/SoftwareEngineeringPractics">SoftwareEngineeringPractics</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/trunkbaseddevelopment"><span itemprop="name">TrunkBasedDevelopment</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Trunk Based Development (TBD)</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Trunk Based Development (TBD)</h1></header>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="understanding">Understanding<a href="#understanding" class="hash-link" aria-label="Direct link to Understanding" title="Direct link to Understanding">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h3>
+<p>Trunk-based development is a version control management strategy where
+developers merge small, frequent updates to a core <code>trunk</code> or <code>main</code> branch.</p>
+<p>Understand in detail
+<a href="https://dora.dev/devops-capabilities/technical/trunk-based-development/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why">Why?<a href="#why" class="hash-link" aria-label="Direct link to Why?" title="Direct link to Why?">​</a></h3>
+<p>Trunk-based development is considered to be one of the core engineering software
+practices</p>
+<ol>
+<li>Faster integration and hence faster feedback on issues</li>
+<li>Reduced merge conflicts</li>
+<li>Enables release readiness for continuous delivery and continuous deployment</li>
+<li>Indirectly encourages better granular planning of tasks to keep PR sizes
+small for faster integration</li>
+<li>Enhanced team collaboration as Trunk-based development fosters good
+understanding between the developers by providing more awareness of all the
+current changes</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="key-differences-between-gitflow-workflow-and-trunk-based-development">Key differences between Gitflow workflow and Trunk-based development<a href="#key-differences-between-gitflow-workflow-and-trunk-based-development" class="hash-link" aria-label="Direct link to Key differences between Gitflow workflow and Trunk-based development" title="Direct link to Key differences between Gitflow workflow and Trunk-based development">​</a></h3>
+<p>In Gitflow, there is a secondary branch (dev/develop) for on-going development.
+Feature branches are merged into the secondary branch only when the feature is
+complete. With several long lived feature branches, conflict resolution becomes
+an overhead. During release, a code freeze is needed on the dev branch from
+which a release branch will be taken and merged to master and dev after release
+completion.</p>
+<p><img decoding="async" loading="lazy" alt="Gitflow workflow" src="/assets/images/tbd-gitflow-fde835c1fd3772e914d8b4f80df5f622.PNG" width="997" height="386" class="img_ev3q"></p>
+<p>In Trunk-based development, all the work goes directly into the primary branch
+which enables faster integration avoiding complex merge conflicts. Features are
+broken down into smaller units of work that can be completed and merged into the
+primary branch frequently. TBD is ideal for Continuous integration and
+deployment. During release, development can still happen in the main trunk while
+a release branch can be taken off at the desired commit and release tags can be
+maintained separately in the release branch</p>
+<p><img decoding="async" loading="lazy" alt="Trunk-based development workflow" src="/assets/images/tbd-trunk-based-development-f5c7e1b8730af9aa726a20a380b41758.PNG" width="994" height="372" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pre-requisites-for-effectiveness">Pre-requisites for effectiveness<a href="#pre-requisites-for-effectiveness" class="hash-link" aria-label="Direct link to Pre-requisites for effectiveness" title="Direct link to Pre-requisites for effectiveness">​</a></h3>
+<ol>
+<li>Automated tests - to make sure the trunk is always stable. In case automated
+tests are not available, there has to be an additional effort of rigorous
+manual testing for every PR before it gets merged to trunk</li>
+<li>Breakdown stories into smaller tasks - it should only be a few hours of
+development effort or to the maximum a couple of days of effort</li>
+<li>Ensure faster code reviews - limit the number of reviewers to a maximum of 2,
+have alternate code owners for complex modules</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="risks-of-not-following">Risks of not following<a href="#risks-of-not-following" class="hash-link" aria-label="Direct link to Risks of not following" title="Direct link to Risks of not following">​</a></h3>
+<p>⛔<!-- --> Failing to follow TBD can lead to</p>
+<ol>
+<li>Complex merge conflicts</li>
+<li>Integration difficulties and quality issues</li>
+<li>Release delays</li>
+<li>Productivity loss - time and cost impact</li>
+<li>CI/CD will not be frequent and effective without Trunk-based development</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="resources">Resources<a href="#resources" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources">​</a></h3>
+<table><thead><tr><th>Topic</th><th>Description</th></tr></thead><tbody><tr><td>Feature flags</td><td><a href="https://trunkbaseddevelopment.com/feature-flags/" target="_blank" rel="noopener noreferrer">What are they</a>, <a href="/docs/DevOps/TrunkBasedDevelopment/TBD">How to implement in Python</a>, <a href="/docs/DevOps/TrunkBasedDevelopment/TBD">How to implement in Javascript</a>, <a href="/docs/DevOps/TrunkBasedDevelopment/TBD">How to implement in LabVIEW</a></td></tr><tr><td>Release process</td><td><a href="/docs/DevOps/TrunkBasedDevelopment/ReleaseProcess">Release Process</a></td></tr><tr><td>External Links</td><td><a href="https://dora.dev/devops-capabilities/technical/trunk-based-development/" target="_blank" rel="noopener noreferrer">DORA documentation on TBD</a>, <a href="https://trunkbaseddevelopment.com/" target="_blank" rel="noopener noreferrer">Trunk-based development</a></td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="moving-from-gitflow-to-tbd">Moving from Gitflow to TBD<a href="#moving-from-gitflow-to-tbd" class="hash-link" aria-label="Direct link to Moving from Gitflow to TBD" title="Direct link to Moving from Gitflow to TBD">​</a></h3>
+<p>Here are some steps to get started with when you are moving from Gitflow to TBD</p>
+<ol>
+<li>Delete all the inactive branches</li>
+<li>Make sure the main branch is up to date (merge develop to main)</li>
+<li>Redirect all the PRs to main instead of develop</li>
+<li>Make sure main branch is protected with a pre integration step of rigorous
+testing (ideally through test automation)</li>
+<li>⚠️<!-- --> Gradually abandon the develop branch. Need not drop the develop
+branch abruptly</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="note">Note<a href="#note" class="hash-link" aria-label="Direct link to Note" title="Direct link to Note">​</a></h3>
+<p>When starting to adopt TBD, Tech Lead should take care of the following,</p>
+<ol>
+<li>Mindset shift in the team for developing and merging in
+<a href="https://google.github.io/eng-practices/review/developer/small-cls.html" target="_blank" rel="noopener noreferrer">small chunks</a></li>
+<li>Deciding whether feature flags are needed and how to implement them</li>
+<li>Understanding and deciding on the release process based on your project
+needs. As all the work goes into one main branch we should decide how release
+branches will be handled. For example, whether the main branch will always be
+release ready (with proper hiding of incomplete features) or release branch
+will be taken out at the right commit from main</li>
+<li>Groom the stories well and split them into smaller tasks</li>
+<li>Monitor how well the adoption is happening with the help of these</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="implementation">Implementation<a href="#implementation" class="hash-link" aria-label="Direct link to Implementation" title="Direct link to Implementation">​</a></h2>
+<ol>
+<li>The project repository should have a <code>main</code> branch (the trunk)</li>
+<li>Develop in small batches (a few commits) and merge back to the <code>main</code> branch</li>
+<li>For each batch of work, developers should -<!-- -->
+<ol>
+<li>Create a new branch from the <code>main</code> branch</li>
+<li>Name the branch using pattern <code>users/&lt;firstname-lastname&gt;/&lt;task-name&gt;</code>
+(eg: <code>users/sathish-thangavel/my-task-123</code>)</li>
+<li>Add necessary code changes (a few commits)</li>
+<li>Add necessary automated tests</li>
+<li>Merge back to <code>main</code> using PR workflow</li>
+<li>Delete the user branch created</li>
+<li>For complex modules where parallel development is needed, create sub
+branches from the base feature branch and create a PR against the base
+feature branch to ease the code review process and get the review comments
+quicker. But the merge should always happen to the <code>main</code> branch. Once the
+base feature branch is merged to <code>main</code>, the sub branch can be updated
+with the latest from <code>main</code> and PR can be redirected to <code>main</code> to get it
+merged</li>
+</ol>
+</li>
+<li>Use <a href="https://martinfowler.com/articles/feature-toggles.html" target="_blank" rel="noopener noreferrer">feature flags</a>
+to hide any work that is still in progress. But we should make sure automated
+tests are added even for the hidden feature.</li>
+<li>User branch should not be very deviated from <code>main</code>. Merge user branches to
+<code>main</code> at least once a day (Ideal state). If closing the development and
+merging the user branch in a day is not possible, we should make sure the
+user branch is in sync with <code>main</code> (pull / rebase with main) at least once a
+day.</li>
+<li>Use
+<a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/merging-with-squash?view=azure-devops#squash-merge" target="_blank" rel="noopener noreferrer">Squash Merge</a>
+when merging to the <code>main</code> branch.</li>
+<li>Have very few active development branches (one active branch per developer).</li>
+<li>Have separate <code>release branch</code> for production releases<!-- -->
+<ol>
+<li>Use <code>release branch</code> as the stable branch during release</li>
+<li>Team should not be blocked to merge changes to <code>trunk</code> during release</li>
+<li><code>release branch</code> should use <code>feature flags</code> to hide any work that is still
+in progress</li>
+<li>After the <code>release branch</code> is taken, if there are any bugfixes integrated
+into <code>main</code> that is needed for release, cherry pick the commits into
+<code>release branch</code></li>
+<li><code>release branch</code> should not be merged back into <code>main</code>. If any bugfixes
+are done directly on <code>release branch</code> it has to be cherry-picked back into
+<code>main</code></li>
+<li>Once the release is done, tag the commit in <code>release branch</code> with the
+appropriate release tag and delete the <code>release branch</code></li>
+<li>Active release branches should have the same CI pipeline as the <code>main</code>
+branch</li>
+</ol>
+</li>
+<li>Read more -<!-- -->
+<ol>
+<li><a href="https://dora.dev/devops-capabilities/technical/trunk-based-development/" target="_blank" rel="noopener noreferrer">DORA Trunk-based development</a></li>
+<li><a href="https://dora.dev/devops-capabilities/process/working-in-small-batches/" target="_blank" rel="noopener noreferrer">DORA Working in small batches</a></li>
+</ol>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="non-negotiable-items">Non-negotiable items<a href="#non-negotiable-items" class="hash-link" aria-label="Direct link to Non-negotiable items" title="Direct link to Non-negotiable items">​</a></h3>
+<p>To ensure the success of the Trunk-based development process, certain
+non-negotiable should be adhered:</p>
+<ol>
+<li>Version control setup to check-in repository files</li>
+<li>Small chunks of work merged to main on a regular basis (ideally everyday)</li>
+<li>Clear process for ensuring stability of main branch (ideally complete test
+automation)</li>
+<li>Proper naming convention for branches</li>
+<li>Minimal number of active branches</li>
+<li>Well established release procedure</li>
+<li>Usage of feature flags if needed</li>
+</ol></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/category/trunkbaseddevelopment"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">TrunkBasedDevelopment</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/DevOps/TrunkBasedDevelopment/ReleaseProcess"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">ReleaseProcess</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#understanding" class="table-of-contents__link toc-highlight">Understanding</a><ul><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#why" class="table-of-contents__link toc-highlight">Why?</a></li><li><a href="#key-differences-between-gitflow-workflow-and-trunk-based-development" class="table-of-contents__link toc-highlight">Key differences between Gitflow workflow and Trunk-based development</a></li><li><a href="#pre-requisites-for-effectiveness" class="table-of-contents__link toc-highlight">Pre-requisites for effectiveness</a></li><li><a href="#risks-of-not-following" class="table-of-contents__link toc-highlight">Risks of not following</a></li><li><a href="#resources" class="table-of-contents__link toc-highlight">Resources</a></li><li><a href="#moving-from-gitflow-to-tbd" class="table-of-contents__link toc-highlight">Moving from Gitflow to TBD</a></li><li><a href="#note" class="table-of-contents__link toc-highlight">Note</a></li></ul></li><li><a href="#implementation" class="table-of-contents__link toc-highlight">Implementation</a><ul><li><a href="#non-negotiable-items" class="table-of-contents__link toc-highlight">Non-negotiable items</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

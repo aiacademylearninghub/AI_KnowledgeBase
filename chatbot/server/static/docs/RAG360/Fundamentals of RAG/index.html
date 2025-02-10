@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-RAG360/Fundamentals of RAG" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">Fundamentals of RAG | Knowledge Base</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="http://localhost:8000/docs/RAG360/Fundamentals of RAG"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Fundamentals of RAG | Knowledge Base"><meta data-rh="true" name="description" content="What is RAG"><meta data-rh="true" property="og:description" content="What is RAG"><link data-rh="true" rel="canonical" href="http://localhost:8000/docs/RAG360/Fundamentals of RAG"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/RAG360/Fundamentals of RAG" hreflang="en"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/RAG360/Fundamentals of RAG" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Knowledge Base RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Knowledge Base Atom Feed"><link rel="stylesheet" href="/assets/css/styles.c2084c17.css">
+<script src="/assets/js/runtime~main.37b74131.js" defer="defer"></script>
+<script src="/assets/js/main.68f49705.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Home Page</b></a><a class="navbar__item navbar__link" href="/docs/category/fundamentals">AI HUB</a><a class="navbar__item navbar__link" href="/docs/category/continousintergration">DevOps</a><a class="navbar__item navbar__link" href="/blog">Authors</a></div><div class="navbar__items navbar__items--right"><a href="https://sudeeparyan.github.io/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Webiste<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input"><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/RAG360/Introduction">Introduction</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/docs/RAG360/Fundamentals of RAG">Fundamentals of RAG</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/types-of-rag">Types of RAG</a><button aria-label="Expand sidebar category &#x27;Types of RAG&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/data-ingestion">Data Ingestion</a><button aria-label="Expand sidebar category &#x27;Data Ingestion&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/retrieval">Retrieval</a><button aria-label="Expand sidebar category &#x27;Retrieval&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/generation">Generation</a><button aria-label="Expand sidebar category &#x27;Generation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/evaluation">Evaluation</a><button aria-label="Expand sidebar category &#x27;Evaluation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/tracking">Tracking</a><button aria-label="Expand sidebar category &#x27;Tracking&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/challenges-in-rag">Challenges in RAG</a><button aria-label="Expand sidebar category &#x27;Challenges in RAG&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/RAG360/Project Checklist">Project Checklist</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Fundamentals of RAG</span><meta itemprop="position" content="1"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Fundamentals of RAG</h1></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-rag">What is RAG<a href="#what-is-rag" class="hash-link" aria-label="Direct link to What is RAG" title="Direct link to What is RAG">​</a></h2>
+<ol>
+<li>
+<p><strong>Retrieval Augmented Generation (RAG)</strong> is an AI concept designed to enhance
+the performance of Large Language Models (LLMs) by incorporating real-time,
+contextually relevant information from external sources during the generation
+of responses.</p>
+</li>
+<li>
+<p>This addresses key limitations of LLMs, such as,</p>
+<ol>
+<li>Limitation of the training dataset of the foundational model.</li>
+<li>Inconsistencies and gaps in domain-specific or organization-specific
+knowledge.</li>
+</ol>
+</li>
+<li>
+<p>This mitigates the risk of producing incorrect or fabricated (hallucinated)
+responses.</p>
+</li>
+<li>
+<p>RAG approach enhances the capabilities of language models like GPT-4 by
+bridging the information gap through the incorporation of external databases.</p>
+</li>
+<li>
+<p>Typically, when a user asks ChatGPT about recent news, the model’s responses
+are limited to the pretraining data, which may not include the most current
+events.</p>
+</li>
+<li>
+<p>RAG addresses this limitation by sourcing up-to-date information from
+external repositories, such as news articles, to provide more relevant and
+timely answers.</p>
+</li>
+<li>
+<p>This process involves gathering pertinent articles related to the user’s
+query and combining them with the initial question to form a comprehensive
+prompt.</p>
+</li>
+<li>
+<p>This method significantly enhances the depth and accuracy of the responses
+generated by the language model, ensuring that it can provide well-informed
+and current answers.</p>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><ol>
+<li>
+<p>Analogy between pretrained model &amp; Retrieval Augmented Generation: Pretrained
+model is like studying beforehand and performing in the exam based on what is
+already learnt.</p>
+</li>
+<li>
+<p>On the other hand, RAG is like an open book exam, where no studying
+beforehand is required, and the student searches for the answer in the book
+based on the question and answers it during the exam.</p>
+</li>
+</ol></div></div>
+<p><img decoding="async" loading="lazy" alt="RAG.png" src="/assets/images/workflow-4d7ac9d39bc4d50186e37b8da486189b.png" width="1133" height="670" class="img_ev3q"> A representative instance of the RAG
+process applied to question answering.</p>
+<p>RAG operates through three critical phases:</p>
+<ol>
+<li>Data Ingestion</li>
+<li>Retrieval</li>
+<li>Generation</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="data-ingestion">Data Ingestion<a href="#data-ingestion" class="hash-link" aria-label="Direct link to Data Ingestion" title="Direct link to Data Ingestion">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="DataIngestion.png" src="/assets/images/DataIngestion-e5d2c2d99d02ead3c68e722bc5d13103.png" width="757" height="237" class="img_ev3q"></p>
+<ol>
+<li>
+<p>The Data ingestion process in Retrieval Augmented Generation (RAG) is key to
+preparing data for the model to generate responses.</p>
+</li>
+<li>
+<p>It involves three main steps: <code>chunking</code>, <code>embedding</code>, and <code>indexing</code>.</p>
+<ol>
+<li>
+<p><strong>Chunking</strong> involves breaking down documents into smaller, manageable
+segments based on criteria like size or natural text divisions. This
+allows the model to focus on specific parts of the text, improving its
+ability to retrieve relevant information.</p>
+</li>
+<li>
+<p><strong>Embedding</strong> converts these text chunks into vector representations,
+capturing the essential qualities of the text in a format that is easy for
+the model to process.</p>
+</li>
+<li>
+<p><strong>Indexing</strong> organizes these vectors into a structured format optimized
+for fast retrieval, storing them in a searchable database to help the
+model quickly find and use the most relevant information.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>In short, chunking divides the text, embedding transforms it into vectors,
+and indexing arranges these vectors for efficient retrieval, enabling the
+model to generate accurate and contextually appropriate responses.</p>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Please note that there are other steps critical to data ingestion that
+are explained in subsequent sections, as this page covers only key information.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="retrieval">Retrieval<a href="#retrieval" class="hash-link" aria-label="Direct link to Retrieval" title="Direct link to Retrieval">​</a></h3>
+<p>The retrieval component involves the following steps:</p>
+<p><img decoding="async" loading="lazy" alt="Retrieval.png" src="/assets/images/Retrieval-ee0dfe0931f03214b44b71b5d1d267a7.png" width="798" height="282" class="img_ev3q"></p>
+<ol>
+<li>
+<p><strong>User Query:</strong> When a user submits a natural language query to the Language
+Model (LLM), such as &quot;What are the key components of cloud computing?&quot;, the
+system begins a sequence of processes to generate an informed response.</p>
+</li>
+<li>
+<p><strong>Query Conversion:</strong> The natural language query is first processed by an
+embedding model, which converts it into a numerical format called an
+embedding or vector representation. This embedding model is aligned with the
+one used during the document ingestion phase, ensuring consistency in data
+processing.</p>
+</li>
+<li>
+<p><strong>Vector Comparison:</strong> The system then compares the user&#x27;s query vector with
+those stored in a pre-constructed index of a knowledge base. This comparison
+uses similarity metrics like cosine similarity to determine how closely the
+query vector matches the vectors in the index.</p>
+</li>
+<li>
+<p><strong>Top-K Retrieval:</strong> Based on these similarities, the system retrieves the
+top-K documents or passages from the knowledge base that are most relevant
+to the query.</p>
+<p><em><strong>For example</strong>, if K is set to 5, the system would select the five most pertinent documents that relate to the components of cloud computing.</em></p>
+</li>
+<li>
+<p><strong>Data Retrieval:</strong> Finally, the system extracts the content from the
+selected top-K documents and presents it in a readable format, providing
+detailed and contextually relevant information about the user&#x27;s query.</p>
+</li>
+</ol>
+<p>Through this retrieval process, the LLM gains context from the most relevant
+sections of the knowledge base, allowing it to deliver a well-informed response,
+such as detailing the key components of cloud computing, including computing,
+storage, and networking services.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Please note that the below sections explain different techniques in
+retrieval that can provide better performance in different scenarios.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="generation">Generation<a href="#generation" class="hash-link" aria-label="Direct link to Generation" title="Direct link to Generation">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Generation.png" src="/assets/images/Generation-6737a4c13bea582169d5bd3670c5b83d.png" width="982" height="362" class="img_ev3q"></p>
+<ol>
+<li>
+<p>The synthesis phase in Retrieval Augmented Generation (RAG) is similar to how
+large language models (LLMs) typically generate responses.</p>
+</li>
+<li>
+<p>However, what sets it apart is the addition of extra context from a detailed
+knowledge base.</p>
+</li>
+<li>
+<p>In this phase, the LLM creates a final answer by combining its usual language
+generation abilities with the information it has retrieved.</p>
+</li>
+<li>
+<p>This makes the response more complete and accurate, as it includes references
+to specific documents or historical data.</p>
+</li>
+<li>
+<p>By using both its generative strengths and precise knowledge inputs, the
+model delivers a well-informed and reliable response to the user.</p>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h3>
+<ol>
+<li>
+<p>In summary, the Retrieval Augmented Generation (RAG) framework improves
+traditional language models by adding extra steps to make sure the responses
+are accurate and relevant.</p>
+</li>
+<li>
+<p>The process starts with the <strong>data ingestion phase</strong>, where documents are
+broken down into smaller pieces, turned into embeddings, and stored in an
+index for easy retrieval.</p>
+</li>
+<li>
+<p>In the <strong>retrieval phase</strong>, the system uses this index to find the most
+relevant documents based on similarity when a user asks a question.</p>
+</li>
+<li>
+<p>Finally, in the <strong>synthesis phase</strong>, the model combines this retrieved
+information with what it already knows to generate a precise and accurate
+response.</p>
+</li>
+<li>
+<p>This approach not only improves the accuracy of the responses but also allows
+for verification of the sources of information, reducing the need for
+frequent retraining.</p>
+</li>
+<li>
+<p>RAG effectively solves the limitations of traditional language models by
+ensuring the generated content is both relevant and accurate.</p>
+</li>
+<li>
+<p>It also tackles challenges like data parsing, efficient embedding, and
+generalization across different domains, all without needing to train the
+model on domain-specific data.</p>
+</li>
+<li>
+<p>This makes RAG easy to apply to new domains without additional training.</p>
+</li>
+</ol>
+<p>This overview covers the key aspects of RAG, with further details provided in
+the following sections.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>One of the major advantage of the RAG is instead of just guessing an answer, it looks for relevant documents that we have provided first, then uses that information to generate the output which is more accurate and detailed.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="reference">Reference<a href="#reference" class="hash-link" aria-label="Direct link to Reference" title="Direct link to Reference">​</a></h3>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><ol>
+<li>Image Source:
+<a href="https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/</a></li>
+</ol></div></div></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/RAG360/Introduction"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Introduction</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/category/types-of-rag"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Types of RAG</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#what-is-rag" class="table-of-contents__link toc-highlight">What is RAG</a><ul><li><a href="#data-ingestion" class="table-of-contents__link toc-highlight">Data Ingestion</a></li><li><a href="#retrieval" class="table-of-contents__link toc-highlight">Retrieval</a></li><li><a href="#generation" class="table-of-contents__link toc-highlight">Generation</a></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li><li><a href="#reference" class="table-of-contents__link toc-highlight">Reference</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

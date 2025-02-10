@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-CodingStandards/Books/Clean-code" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">Clean-code | Knowledge Base</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="http://localhost:8000/docs/CodingStandards/Books/Clean-code"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Clean-code | Knowledge Base"><meta data-rh="true" name="description" content="This is a book review on &#x27;Clean Code&#x27;, by Robert C. Martin."><meta data-rh="true" property="og:description" content="This is a book review on &#x27;Clean Code&#x27;, by Robert C. Martin."><link data-rh="true" rel="canonical" href="http://localhost:8000/docs/CodingStandards/Books/Clean-code"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/CodingStandards/Books/Clean-code" hreflang="en"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/CodingStandards/Books/Clean-code" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Knowledge Base RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Knowledge Base Atom Feed"><link rel="stylesheet" href="/assets/css/styles.c2084c17.css">
+<script src="/assets/js/runtime~main.37b74131.js" defer="defer"></script>
+<script src="/assets/js/main.68f49705.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Home Page</b></a><a class="navbar__item navbar__link" href="/docs/category/fundamentals">AI HUB</a><a class="navbar__item navbar__link" href="/docs/category/continousintergration">DevOps</a><a class="navbar__item navbar__link" href="/blog">Authors</a></div><div class="navbar__items navbar__items--right"><a href="https://sudeeparyan.github.io/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Webiste<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input"><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/CodingStandards/Software Engineer Practices">Software Engineer Practices</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/archictures">Archictures</a><button aria-label="Expand sidebar category &#x27;Archictures&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/books">Books</a><button aria-label="Collapse sidebar category &#x27;Books&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/CodingStandards/Books/Clean-code">Clean-code</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CodingStandards/Books/PragmaticProgrammer">The Pragmatic Programmer</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/python">Python</a><button aria-label="Expand sidebar category &#x27;Python&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/react">React</a><button aria-label="Expand sidebar category &#x27;React&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/books"><span itemprop="name">Books</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Clean-code</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Clean Code</h1></header>
+<p>This is a book review on &#x27;Clean Code&#x27;, by Robert C. Martin.</p>
+<p>[[<em>TOC</em>]]</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="foreword">Foreword<a href="#foreword" class="hash-link" aria-label="Direct link to Foreword" title="Direct link to Foreword">​</a></h2>
+<p>&quot; As for this book, it is the best pragmatic application of &#x27;Lean&#x27; principles to
+software I have ever seen in print&quot; <code>James O. Coplien</code></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
+<p>Clean code is a handbook of agile software craftsmanship. This document
+summarizes the real life and project examples, suggestions on how clean code has
+improved the programmers life.</p>
+<p>Note: The current document includes review until chapter 3 - Functions.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="meaningful-names">Meaningful Names<a href="#meaningful-names" class="hash-link" aria-label="Direct link to Meaningful Names" title="Direct link to Meaningful Names">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="highlights">Highlights<a href="#highlights" class="hash-link" aria-label="Direct link to Highlights" title="Direct link to Highlights">​</a></h3>
+<ol>
+<li>Naming Kid is fun</li>
+<li>Weird to have names</li>
+<li>Q&amp;A</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h3>
+<ol>
+<li>
+<p>Avoid using Hungarian notation (Name starting with the type of the
+variable). This may lead to confusion and reduce the benefit of the code
+editor. It is really weird for a new programmer to read your code having
+some variable name as below :</p>
+<p>list_i = [0, 1, 2]</p>
+</li>
+<li>
+<p>Spend enough time in naming. Variable can be named based on its intentions
+and goal.</p>
+</li>
+<li>
+<p>Avoid adding iterators to have unique names. It doesn&#x27;t make sense and it
+reduces the readability.</p>
+</li>
+<li>
+<p>Follow the &quot;Boy Scout&quot; Rule. Boy Scout Rule can be summarized as:</p>
+<p>&#x27;Leave your code better than you found it&#x27;.</p>
+<p>Don&#x27;t hesitate to rename old functions or variables when you find duplicate
+names.</p>
+</li>
+<li>
+<p>Pick one kind of word per concept.</p>
+<p>For example, name as function as :</p>
+<p>get_student(); get_teacher()</p>
+<p>Don&#x27;t name as follows :</p>
+<p>get_student(): fetch_teacher()</p>
+</li>
+<li>
+<p>Use searchable names. Let&#x27;s say we have to check for age limit of value 18.
+Instead of using the value directly in condition statements, we can assign a
+Constant name as follows which is more searchable.</p>
+<p>&#x27;ELIGIBLE_AGE&#x27; = 18</p>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="experience">Experience<a href="#experience" class="hash-link" aria-label="Direct link to Experience" title="Direct link to Experience">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="naming-the-child">Naming the child<a href="#naming-the-child" class="hash-link" aria-label="Direct link to Naming the child" title="Direct link to Naming the child">​</a></h4>
+<p>If you got a Kid, you got to name for sure. Naming get&#x27;s complicated with so
+much constraints. Because the naming involves many people and factors. A parent
+has to deal with following factors.</p>
+<ol>
+<li>
+<p>Astrologer suggested a small list of starting letters, while all the
+starting letters mentioned is tough to be formed into a meaningful name. It
+is not aligned with their interest.</p>
+</li>
+<li>
+<p>It should be a boy name.</p>
+</li>
+<li>
+<p>It should not be too long or difficult to pronounce.</p>
+</li>
+<li>
+<p>Relatives suggested some names, they had to consider them in mind too.</p>
+</li>
+</ol>
+<p>Hence a good amount of time is spent on finding out the name satisfying most of
+the constraints.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="qa">Q&amp;A<a href="#qa" class="hash-link" aria-label="Direct link to Q&amp;A" title="Direct link to Q&amp;A">​</a></h3>
+<ol>
+<li>
+<p>Does naming meaningfully necessary in graphical program like LabVIEW?</p>
+<p>Yes, it is another programming. It involves naming the variables, UI
+elements ans SubVI&#x27;s.</p>
+</li>
+<li>
+<p>What should we do in case the customer wants name to be short than being big
+and meaningful?</p>
+<p>We can&#x27;t completely avoid meaningful names. We shall reduce the size and follow same standard across the team.</p>
+</li>
+<li>
+<p>I have to get a user input in python. I get the input as string and
+converting it to an integer for calculation purpose. How should I name in
+this case?</p>
+<p>Naming can be done depending on the context and intention. Don&#x27;t use &#x27;Hungarian Notation&quot;. Try to take the input in integer form itself if possible.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="highlights-1">Highlights<a href="#highlights-1" class="hash-link" aria-label="Direct link to Highlights" title="Direct link to Highlights">​</a></h3>
+<ol>
+<li>How to write clean code functions?</li>
+<li>Birthday cake! Yummy!</li>
+<li>Refactoring - Boy Scout Rule</li>
+<li>Q&amp;A</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="summary-1">Summary<a href="#summary-1" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h3>
+<ol>
+<li>Write functions to achieve single functionality or purpose. Don&#x27;t write huge
+lines of code in single functions.(Single responsibility principle)</li>
+<li>For example lets say we have to validate the user for an application login.
+We need not write every logic to check if valid user and also write code to
+handle guest code. Instead we could handle this in two separate functions and
+call them.</li>
+<li>Avoid repeating the logics instead reuse them.</li>
+<li>Easy to follow DevOPS when we write clean code.</li>
+<li>Break down functions based on right design.</li>
+<li>Don&#x27;t have the arguments in outer caller functions only because one of the
+inner function requires it.</li>
+<li>Draw boundary for the number of function designed.</li>
+<li>It takes time to write to clean code but it is worthy for healthy programmers
+life.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="experience-1">Experience<a href="#experience-1" class="hash-link" aria-label="Direct link to Experience" title="Direct link to Experience">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="ordering-the-cake-for-the-baby">Ordering the cake for the baby<a href="#ordering-the-cake-for-the-baby" class="hash-link" aria-label="Direct link to Ordering the cake for the baby" title="Direct link to Ordering the cake for the baby">​</a></h4>
+<p>We want yummy cakes to make the tummy feel good. But what about the design of
+the cake. We decided the theme to be universe to show the baby of how the world
+can be. Cake had independent Layers connecting to each other. Staring with
+bottom layer of aquarium. Middle Layer with upper sea and shore. Finally the sky
+and space.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="deal-with-software-projects">Deal with software projects<a href="#deal-with-software-projects" class="hash-link" aria-label="Direct link to Deal with software projects" title="Direct link to Deal with software projects">​</a></h4>
+<p>Ended up in writing a huge function which worked well. But, when read the lines
+of code, realized most of them were duplicate code.</p>
+<p>Writing automation tests for the tightly coupled functions was really tough.</p>
+<p>After writing up the code already, I didn&#x27;t actually hesitate to refactor it.
+Rewrote functions with each of its own purpose. It is time consuming but worthy
+in benefits. It improves readability, testing.</p>
+<p>Incorporated &#x27;DRY&#x27; principle to avoid duplications and confusions.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="qa-1">Q&amp;A<a href="#qa-1" class="hash-link" aria-label="Direct link to Q&amp;A" title="Direct link to Q&amp;A">​</a></h3>
+<ol>
+<li>
+<p>Is it too much to take up to write clean code functions?</p>
+<p>It is time consuming process sometime. But it improves many things like
+testing, readability and so. clean code makes a good impression.</p>
+</li>
+<li>
+<p>Should we set boundary to number of functions?</p>
+<p>Yes, draw line based on how much effort it takes and how readable the code is.</p>
+</li>
+<li>
+<p>What are all the top three things to consider for refactoring to get clean
+code.</p>
+<ol>
+<li>Identify if it is not clean code.</li>
+<li>Don&#x27;t hesitate to clean code (Boy Scout rule).</li>
+<li>Follow single responsibility principle.</li>
+<li>Follow try catch implementation in places needed.</li>
+<li>Draw boundaries to split functions. Don&#x27;t end up in too many.</li>
+</ol>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="take-away-from-session">Take Away from session<a href="#take-away-from-session" class="hash-link" aria-label="Direct link to Take Away from session" title="Direct link to Take Away from session">​</a></h2>
+<ol>
+<li>Have meaningful name.</li>
+<li>Reveal intention through naming.</li>
+<li>Ok to spend time for naming properly and writing clean code.</li>
+<li>Have checkpoints and boundaries in splitting functions.</li>
+<li>Follow single responsibility principle for writing functions.</li>
+</ol>
+<h1>Clean Code</h1>
+<p>This is a summary of <code>Clean Code</code>, by Robert C. Martin.</p>
+<p>This is a compilation of book summaries shared in chapter-wise highlights</p>
+<p>[[<em>TOC</em>]]</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="chapter-1---clean-code">Chapter 1 - Clean code<a href="#chapter-1---clean-code" class="hash-link" aria-label="Direct link to Chapter 1 - Clean code" title="Direct link to Chapter 1 - Clean code">​</a></h2>
+<p>Robert (the author) says here why we are reading this book first as to become
+better programmers and how we&#x27;ll become one at the end after going through the
+book.</p>
+<p>We&#x27;re asked why we hurry up developing something quicker and make up a mess on
+the code. He gives importance to why the developers should consider clean code
+practices as well as estimating efforts for any module or any code development.</p>
+<p>Some importance of Clean Code:</p>
+<ul>
+<li>Clean code is not just about technical correctness; it&#x27;s about readability,
+maintainability, and adaptability.</li>
+<li>Clean code is an investment that pays off in the long run. Messy code leads to
+slower. development, more bugs, and higher maintenance costs, ultimately
+hurting businesses.</li>
+<li>Writing clean code is not just about technical skill; it&#x27;s also about
+professional responsibility.</li>
+</ul>
+<p>Instead of boring with long paragraphs let&#x27;s directly look at a few of the
+people&#x27;s words whom the author had interviewed to make us understand the
+importance of clean code.</p>
+<table><thead><tr><th>Programmer</th><th>Quote</th></tr></thead><tbody><tr><td><code>Dave Thomas</code> (founder of OTI)</td><td>Clean code can be read, and enhanced by a developer other than its original author.</td></tr><tr><td><code>Bjarne Stroustrup</code> (inventor of c++)</td><td>Clean code should be elegant and efficient, doing anything well.</td></tr><tr><td><code>Grady Booch</code> (author of Object Oriented Analysis and Design with Applications)</td><td>Clean code is simple and direct, and never obscures the designer&#x27;s intent.</td></tr><tr><td><code>Michael Feathers</code> (author of Working Effectively with Legacy Code)</td><td>Clean code always looks like it was written by someone who cares.</td></tr></tbody></table>
+<p>This summary comes to an end with a rule from scout practice &quot;Leave the
+campground cleaner than you found it&quot; which is quoted by the author as something
+we can take into our profession as well If we all check our code a little
+cleaner than when we checked it out, the code simply could not rot he says.</p>
+<p>Bonus: The image on the cover is M104: The Sombrero Galaxy which is around 30
+million light-years from us.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="chapter-2---meaningful-names">Chapter 2 - Meaningful Names<a href="#chapter-2---meaningful-names" class="hash-link" aria-label="Direct link to Chapter 2 - Meaningful Names" title="Direct link to Chapter 2 - Meaningful Names">​</a></h2>
+<p>Names are important in any software. They are everywhere in the code. So let&#x27;s
+go through some ways/rules to find a good name.</p>
+<ol>
+<li>Names should be in such a way that it reveals or tells us the intention of
+why it is used, what it does, etc. Example: Name the variable as
+&#x27;testPlanUnderWorkOrder&#x27; instead of &#x27;tpUnderWO&#x27; which is not easily
+understandable by all readers.</li>
+<li>Avoid names that provide wrong information about the name to the reader. -&gt;
+No abbreviations or wrongly spelled words. -&gt; Refer to words that actually
+mean something. Let&#x27;s take &#x27;List&#x27; as an example. Mention only the collection
+as a list until and unless it is a list else don&#x27;t use that word which is
+misleading.</li>
+<li>Names should be distinguished in such a way that the readers know the
+difference. -&gt; Avoid misspelled words. -&gt; Number series or noise words are
+meaningless until and unless they are only needed to satisfy the compiler and
+not make the words readable.</li>
+<li>Name it in such a way that it is pronounceable to the reader. Eg: string
+schTPId; -&gt; This doesn&#x27;t make other readers understand what it actually
+means. string scheduleTestPlanId; -&gt; This is pronounceable to the reader as
+it denotes the ID of the schedule test plan.</li>
+<li>Names should be easily locatable or it should be searchable in the code. -&gt;
+Always name a constant with a valid name. -&gt; Choose longer names for
+variables inside the code and avoid using single-letter names. -&gt; Use
+single-letter names only within local methods.</li>
+<li>Try to name a variable that can be easily understood by a new developer
+instead of encoding it along with a new code.</li>
+<li>Hungarian Notation - Adding the type of variables for the readers to know. It
+was used previously when no specific type of variables were introduced. Now
+with advancements, it makes it harder for readers to read the code.</li>
+<li>We don&#x27;t need to prefix the member variable with &#x27;m_&#x27; anymore.</li>
+<li>Class names should have noun or noun phrase name and it should not be a verb.</li>
+<li>Method should have verb or verb phrase names and it should not be a noun.</li>
+<li>Always choose clarity over entertainment/cute values.</li>
+<li>Go with solution domain names rather than problem domain names which makes it
+easy for programmers to read and understand without any assistance.</li>
+<li>Go with problem domain names when the programmers can get assistance from
+clients easily. Place the similar context names inside a class function or
+namespace for readers to understand or else add prefixes to the names. E.g.:
+First-name, last-name, street, city, state all these signify address which
+can be grouped under address class. Otherwise, we need to prefix the names
+with addr to let the reader understand they belong to the address family.</li>
+</ol>
+<p>Choosing good names may take time but it saves more than it takes. So let&#x27;s all
+follow these rules and try to name our variables in a good and understandable
+way. Let&#x27;s together become good namers.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="chapter-3---functions">Chapter 3 - Functions<a href="#chapter-3---functions" class="hash-link" aria-label="Direct link to Chapter 3 - Functions" title="Direct link to Chapter 3 - Functions">​</a></h2>
+<ol>
+<li>How small should a function be?<!-- -->
+<ul>
+<li>The indent level of a function should not be greater than one or two.</li>
+<li>Blocks within if, else, and while statements should be one line long which
+should probably be a function call. This adds readability as the function
+called will have a descriptive name.</li>
+</ul>
+</li>
+<li>Do one thing<!-- -->
+<ul>
+<li>If you can extract another function from the original function with a name
+that is quite different from the original function, then the function
+wasn&#x27;t doing one thing. Functions that do one thing cannot be divided into
+sections.<!-- -->
+<ul>
+<li>In order to make sure functions do one thing, we need to make sure
+statements within a function are at the same level of abstraction. Mixing
+different levels of abstraction within a function is confusing.
+<a href="https://medium.com/javarevisited/slap-that-ugly-code-6ec276d3a4bc#:~:text=Mixing%20different%20levels%20of%20abstraction,the%20same%20level%20of%20abstraction." target="_blank" rel="noopener noreferrer">Short and nice example</a></li>
+<li>To stay at a single level of abstraction, we should follow the Step-Down
+Rule. With this, each function introduces (uses) the next function which
+will be defined below. Here each function stays at a consistent level of
+abstraction.</li>
+<li>Avoid switch and if/else chains. By nature, switch statements do more
+than one thing. When using switch statements bury them in the basement of
+the Abstract Factory class -
+<a href="https://levelup.gitconnected.com/avoid-using-switch-statements-like-this-in-your-code-b3dedea66d9" target="_blank" rel="noopener noreferrer">Using switch inside an Abstract Factory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use descriptive names<!-- -->
+<ul>
+<li>It will help clarify the design of the modules in our minds and help us
+improve it.</li>
+</ul>
+</li>
+<li>Prefer fewer arguments<!-- -->
+<ul>
+<li>Do not pass Boolean (flag) arguments. It means the function does more than
+one thing. One when the flag is true and another when the flag is false.
+Instead, it could be two separate functions.</li>
+<li>Avoid dyadic(2) and triadic(3) function arguments. Do not pass more than
+triadic(3) arguments.</li>
+<li>How to avoid many arguments? (If applicable)<!-- -->
+<ul>
+<li>Create a class with the argument as a member variable of the class and
+the function as a member function.</li>
+<li>Reducing the number of arguments by creating objects out of them...Yes,
+we have done it right! We have refactored our code with the same rule in
+one of the PRs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Have no side effects<!-- -->
+<ul>
+<li>Should do only what the function is intended to do. If there are necessary
+side effects that need to be done, then the function name must be modified
+to make it clear.</li>
+</ul>
+</li>
+<li>Command and query should be separated (CQS)<!-- -->
+<ul>
+<li>The function should do something or return something. We should avoid
+functions that return values and change the state of the system at the same
+time since this can lead to unexpected behavior and bugs.</li>
+</ul>
+</li>
+<li>Prefer exception to return error codes and Error handling<!-- -->
+<ul>
+<li>When we return the error code, we create the problem that the caller must
+deal with the error immediately as below.<!-- -->
+<ul>
+<li>if (deletePage(page) == E_OK)</li>
+</ul>
+</li>
+<li>When using the exception, the error processing code can be separated from
+the happy path code and can be simplified.</li>
+<li>It is better to extract the bodies of the try-and-catch blocks into
+functions of their own.</li>
+<li>Error handling is one thing. If try exists in a function, it should be the
+very first word in the function and there should be nothing after
+catch/finally blocks.</li>
+</ul>
+</li>
+<li>Do not repeat yourself<!-- -->
+<ul>
+<li>Eliminate duplication to have only one source of truth and one place to
+change. This will also avoid bugs. Structured Programming: Structured
+programming is based on the idea of breaking down a program into smaller,
+simpler parts, each of which performs a specific task. This makes the
+program easier to understand, test, and maintain.</li>
+<li>By following the clean code for functions, our program will be structured.</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="chapter-4---comments">Chapter 4 - Comments<a href="#chapter-4---comments" class="hash-link" aria-label="Direct link to Chapter 4 - Comments" title="Direct link to Chapter 4 - Comments">​</a></h2>
+<p>Nothing can be quite so helpful as a well-placed comment. Nothing can be quite
+so damaging as a bad comment that propagates lies and misinformation. Let&#x27;s look
+into the categories of good and bad comments that should be considered when you
+think of adding a comment to a code.</p>
+<p>Good Comments: A truly good comment is a comment you found a way not to write.</p>
+<ol>
+<li>Legal comments: These involve specifying the required copyright licenses for
+the projects.</li>
+<li>Informative comments: Providing basic information with a comment can be
+beneficial. For instance, explaining the use of complex regular expressions
+or detailing the return value of an abstract class. Note: If possible,
+consider moving such information to a function or a dedicated class,
+eliminating the need for the comment through clear method naming.</li>
+<li>Explanation of intent: Comments can be used to clarify why certain code is
+written, especially if the rationale is not evident in the code itself. If
+the decision for that specific code is particularly distinct, it should be
+documented in a High-Level Design (HLD) document rather than in the code.</li>
+<li>Clarification: It is helpful to translate the meaning of obscure arguments or
+return values into readable comments, especially when they are part of the
+standard library and cannot be altered. For example, a.comparedTo(b) == -1;
+// a &lt; b a.comparedTo(b) == 0; // a==b</li>
+<li>Warning of consequences: Issuing warnings about potential consequences can be
+valuable. For instance, if a test case is ignored, provide a comment
+explaining the reason for the omission.</li>
+<li>TODO comments: If any future changes need to be made, add a TODO comment
+explaining what should be changed as a follow-up task. Once the follow-up
+tasks are addressed, make sure to remove the comment. However, if something
+can be addressed immediately, avoid leaving a comment.</li>
+<li>Amplification: If a specific part of the code needs to be emphasized to
+inform programmers of its importance, especially when the code appears
+simple, use comments. For example, in the comment feature, we use trim() to
+address a crucial bug in a shared component.</li>
+</ol>
+<p>Bad comments: Inaccurate comments are far worse than no comments at all</p>
+<ol>
+<li>Mumbling: Adding irrelevant information that does not provide any value to
+other programmers because you included it at your discretion.</li>
+<li>Redundant comment: Explaining a whole function in a way that makes
+programmers spend more time reading the comments than the actual code. It is
+also unnecessary to comment on every property in a class.</li>
+<li>Misleading comments: Sometimes, comments are imprecise and not accurate. This
+misinformation can lead other programmers to blindly trust the comment
+instead of reviewing the code, which may perform different functionality than
+what is mentioned in the comment.</li>
+<li>Mandated comments: In some languages or frameworks, there are mandatory
+comments that must be added. This might clutter up, propagate lies and lend
+to general confusion and disorganization.</li>
+<li>Noise comments: These are redundant comments, adding unnecessary or
+distracting information that doesn&#x27;t contribute to the code&#x27;s purpose.</li>
+<li>Avoid using comments when you can use functions or variables: When explaining
+the logic, utilize function names or variables, even if it requires creating
+new ones.</li>
+<li>Position markers: Refrain from using position markers such as
+/////////////////// Logic starts here /////////////////.</li>
+<li>Commented-out code: Avoid commenting out sections of code, as this can lead
+to confusion and raise questions about why the code is commented out.</li>
+<li>Too much information: Avoid providing excessive information in comments,
+including detailed discussions and decisions to give complete context.
+Instead, offer a brief rationale and provide a link to documents or
+accessible forums where the details are explained.</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="chapter-5---formatting">Chapter 5 - Formatting<a href="#chapter-5---formatting" class="hash-link" aria-label="Direct link to Chapter 5 - Formatting" title="Direct link to Chapter 5 - Formatting">​</a></h2>
+<ol>
+<li>
+<p>Readable Code is a Must: The chapter stresses the idea that code is read far
+more often than it is written. Therefore, the primary goal of formatting is
+to enhance readability.</p>
+</li>
+<li>
+<p>Code Tells a Story: Martin introduces the notion that well-formatted code
+should tell a story, conveying the intent of the programmer to anyone who
+reads it.</p>
+</li>
+<li>
+<p>Vertical Formatting Matters: Vertical formatting involves the arrangement of
+lines of code. Proper vertical spacing and indentation are crucial for
+clarity, and related concepts should be kept close while less related ones
+should have more space.</p>
+</li>
+<li>
+<p>The Three Laws of Vertical Formatting: Martin introduces three laws: &quot;The
+Newspaper Metaphor,&quot; &quot;Related Concepts Should Appear in Proximity,&quot; and
+&quot;Variable Declarations Should Be Close to Their Usage.&quot; These laws guide the
+organization of code vertically.</p>
+</li>
+<li>
+<p>Horizontal Formatting Guidelines: Keep lines short to avoid horizontal
+scrolling and make code easier to read. Long lines can be challenging to
+comprehend, and shorter lines improve code understanding.</p>
+</li>
+<li>
+<p>Team Consistency:<br>
+<!-- -->The chapter emphasizes the importance of team rules for consistent formatting
+within a development team. Agreed-upon rules contribute to a cohesive codebase
+and facilitate collaboration.</p>
+</li>
+<li>
+<p>A Plea for Consistency: Martin makes a passionate plea for consistency in
+code formatting. He argues that it&#x27;s better to be consistently bad than
+inconsistently good because inconsistency is more disruptive.</p>
+</li>
+<li>
+<p>Be Rigorous with Formatting: Adopt a rigorous approach to formatting.
+Consider formatting as important as any other aspect of writing code. A
+disciplined attitude towards formatting leads to cleaner, more maintainable
+code.</p>
+</li>
+<li>
+<p>Uncle Bob&#x27;s Formatting Rules: Martin shares Uncle Bob&#x27;s rules, including
+guidelines for the size of functions, the ideal size of a source file, and
+the importance of vertical and horizontal spacing. These rules are practical
+and aimed at improving code quality.</p>
+</li>
+<li>
+<p>Formatting as a Reflection of Code Quality: The chapter concludes by
+suggesting that formatting is a reflection of code quality. Clean and
+consistent formatting contributes to the overall cleanliness and
+maintainability of the code. In summary, Chapter 5 not only provides
+practical guidelines for formatting but also emphasizes the storytelling
+aspect of code. It encourages developers to view code formatting as an
+integral part of the software craftsmanship journey.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="chapter-6---objects-and-data-structures">Chapter 6 - Objects and Data Structures<a href="#chapter-6---objects-and-data-structures" class="hash-link" aria-label="Direct link to Chapter 6 - Objects and Data Structures" title="Direct link to Chapter 6 - Objects and Data Structures">​</a></h2>
+<p>Chapter 6 focuses on principles and practices related to objects, data
+structures, and encapsulation.</p>
+<ol>
+<li>Data Abstraction<!-- -->
+<ul>
+<li>Objects and data structures should hide their internal workings and expose
+only necessary operations.</li>
+<li>Implementation details should be held back and methods should be provided
+to manipulate the encapsulated data.</li>
+<li>Why is data abstraction required? By isolating the implementation details
+of a data structure, the effort put in to make any updates to the code will
+also be significantly reduced.</li>
+</ul>
+</li>
+<li>Data/ Object Anti-Symmetry<!-- -->
+<ul>
+<li>The key distinctions between objects and data structures are emphasized,
+along with how they are used.</li>
+<li>Objects hide their internal state and expose methods to interact with that
+state.</li>
+<li>Data structures often expose their data and allow direct access to their
+data elements</li>
+</ul>
+</li>
+<li>Law of Demeter<!-- -->
+<ul>
+<li>Objects should interact with other subjects through a limited number of
+methods.</li>
+<li>The ultimate message here is to avoid chaining. A method can only operate
+on objects that are<!-- -->
+<ul>
+<li>Passed as arguments to the methods</li>
+<li>Values of fields defined in the class</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Data Transfer Objects<!-- -->
+<ul>
+<li>Data Transfer objects or DTO is a class with public variables and no
+functions. They are useful structures when communicating with databases,
+parsing messages from sockets or passing data between different layers of
+application</li>
+<li>Active records are special forms of DTOs that are public structures with
+public variables primarily used to represent and interact with database
+records.</li>
+<li>Why are they useful? DTOs help to encapsulate data and reduce the number of
+method calls needed to retrieve or manipulate data, improving performance
+and reducing network overhead in distributed systems.</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="chapter-7---error-handling">Chapter 7 - Error Handling<a href="#chapter-7---error-handling" class="hash-link" aria-label="Direct link to Chapter 7 - Error Handling" title="Direct link to Chapter 7 - Error Handling">​</a></h2>
+<ol>
+<li>Use Exceptions Rather Than Return Codes: Use exceptions to handle errors
+instead of relying only on return codes. Exceptions provide a cleaner and
+more expressive way to handle errors, making code easier to read and
+maintain.</li>
+<li>Use Try-Catch-Finally Blocks: The book recommends using try-catch-finally
+blocks to handle exceptions gracefully. This structure separates the normal
+code path from the error-handling logic, improving code readability and
+maintainability.</li>
+<li>Provide Context with Exceptions: When throwing exceptions, it&#x27;s important to
+provide context to help developers understand what went wrong. This includes
+including meaningful error messages and stack traces to aid in debugging.
+Wrap External APIs: When working with external APIs that use checked
+exceptions or throw raw exceptions, it&#x27;s beneficial to wrap these exceptions
+in more meaningful and domain-specific exceptions within your codebase.</li>
+<li>Define Exception Classes in Terms of Caller&#x27;s Needs: When designing custom
+exception classes, focus on the needs of the caller rather than the
+implementation details of the method throwing the exception. This ensures
+that exceptions are meaningful and useful to the caller.</li>
+<li>Don&#x27;t Return Null: Returning null to indicate an error condition can lead to
+NullPointerExceptions and make code harder to reason about. Instead, consider
+using exceptions or special return values to handle error cases.</li>
+<li>Don&#x27;t Pass Null: Similarly, passing null as an argument to methods can lead
+to confusion and errors. It&#x27;s better to avoid passing null whenever possible.</li>
+</ol>
+<p>Examples of Error Handling in Typescript</p>
+<ol>
+<li>
+<p>Handle errors within services to encapsulate error-handling logic</p>
+<div class="language-typescript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-typescript codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">getData</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">return</span><span class="token plain"> httpClient</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token generic-function function" style="color:rgb(80, 250, 123)">get</span><span class="token generic-function generic class-name operator">&lt;</span><span class="token generic-function generic class-name builtin" style="color:rgb(189, 147, 249)">any</span><span class="token generic-function generic class-name operator">&gt;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token string" style="color:rgb(255, 121, 198)">&#x27;api/data&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">pipe</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token function" style="color:rgb(80, 250, 123)">catchError</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">error</span><span class="token operator">:</span><span class="token plain"> HttpErrorResponse</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token operator">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      </span><span class="token builtin" style="color:rgb(189, 147, 249)">console</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">error</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token string" style="color:rgb(255, 121, 198)">&#x27;An error occurred:&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> error</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token plain">message</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">return</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">throwError</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token string" style="color:rgb(255, 121, 198)">&#x27;Something went wrong; please try again later.&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+<li>
+<p>Implement custom error handlers to provide meaningful error messages to users</p>
+<div class="language-typescript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-typescript codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">class</span><span class="token plain"> </span><span class="token class-name">CustomErrorHandler</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">static</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">handleError</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">error</span><span class="token operator">:</span><span class="token plain"> </span><span class="token builtin" style="color:rgb(189, 147, 249)">any</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token operator">:</span><span class="token plain"> </span><span class="token builtin" style="color:rgb(189, 147, 249)">string</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">let</span><span class="token plain"> errorMessage </span><span class="token operator">=</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">&quot;An unknown error occurred&quot;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">if</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">error </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">instanceof</span><span class="token plain"> </span><span class="token class-name">HttpErrorResponse</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      errorMessage </span><span class="token operator">=</span><span class="token plain"> </span><span class="token template-string template-punctuation string" style="color:rgb(255, 121, 198)">`</span><span class="token template-string string" style="color:rgb(255, 121, 198)">Error: </span><span class="token template-string interpolation interpolation-punctuation punctuation" style="color:rgb(248, 248, 242)">${</span><span class="token template-string interpolation">error</span><span class="token template-string interpolation punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token template-string interpolation">status</span><span class="token template-string interpolation interpolation-punctuation punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token template-string string" style="color:rgb(255, 121, 198)"> - </span><span class="token template-string interpolation interpolation-punctuation punctuation" style="color:rgb(248, 248, 242)">${</span><span class="token template-string interpolation">error</span><span class="token template-string interpolation punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token template-string interpolation">statusText</span><span class="token template-string interpolation interpolation-punctuation punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token template-string template-punctuation string" style="color:rgb(255, 121, 198)">`</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">else</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">if</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">error </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">instanceof</span><span class="token plain"> </span><span class="token class-name">Error</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      errorMessage </span><span class="token operator">=</span><span class="token plain"> error</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token plain">message</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">return</span><span class="token plain"> errorMessage</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+<li>
+<p>Avoid swallow errors without proper handling or logging</p>
+<div class="language-typescript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-typescript codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">getData</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">return</span><span class="token plain"> httpClient</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token generic-function function" style="color:rgb(80, 250, 123)">get</span><span class="token generic-function generic class-name operator">&lt;</span><span class="token generic-function generic class-name builtin" style="color:rgb(189, 147, 249)">any</span><span class="token generic-function generic class-name operator">&gt;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token string" style="color:rgb(255, 121, 198)">&#x27;api/data&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">pipe</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><span class="token function" style="color:rgb(80, 250, 123)">catchError</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token operator">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">return</span><span class="token plain"> </span><span class="token constant" style="color:rgb(189, 147, 249)">EMPTY</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token comment" style="color:rgb(98, 114, 164)">// Swallowing error without handling or logging</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="chapter-8---boundaries">Chapter 8 - Boundaries<a href="#chapter-8---boundaries" class="hash-link" aria-label="Direct link to Chapter 8 - Boundaries" title="Direct link to Chapter 8 - Boundaries">​</a></h2>
+<p>Sometimes we buy third-party packages or use open source. We must cleanly
+integrate this foreign code with our own. In this chapter, we look at practices
+and techniques to keep the boundaries of our software clean.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="using-third-party-code">Using Third-Party Code<a href="#using-third-party-code" class="hash-link" aria-label="Direct link to Using Third-Party Code" title="Direct link to Using Third-Party Code">  ​</a></h3>
+<ul>
+<li>
+<p>Third-party providers strive for broad applicability so they can work in many
+environments and appeal to a wide audience. Users, on the other hand, want an
+interface that is focused on their particular needs.</p>
+</li>
+<li>
+<p>Example: Java Map/ C# Dictionary</p>
+<ul>
+<li>The Map interface in Java offers utility methods such as Put(key, Value),
+Get(key), Remove(key), and Clear().</li>
+<li>When passing a Map around, it may expose the Clear() function, allowing any
+user to delete its contents, which might not be desirable.</li>
+</ul>
+</li>
+<li>
+<p>Best Practice: Wrapping Third-Party APIs</p>
+<ul>
+<li>
+<p>It&#x27;s advisable to wrap third-party APIs and exclusively utilize your
+wrapper.</p>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">public class Sensors</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">{</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  private Map&lt;Sensor&gt; sensors = new HashMap();</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  public Sensor getById(String id)</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    return sensors.get(id);</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Minimize dependencies: In the event of a breaking change, modifications are
+confined to the wrapper, reducing the impact on the entire codebase.</p>
+</li>
+<li>
+<p>Future flexibility: You can transition to a different library in the future by
+simply modifying your wrapper.</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="exploring-and-learning-boundaries">Exploring and Learning Boundaries<a href="#exploring-and-learning-boundaries" class="hash-link" aria-label="Direct link to Exploring and Learning Boundaries" title="Direct link to Exploring and Learning Boundaries">​</a></h3>
+<ul>
+<li>Learning the third-party code is hard. Integrating the third-party code is
+hard too.</li>
+<li>Instead of experimenting and trying out the new stuff in our production code,
+we could write some automated tests to explore our understanding of the
+third-party code. These tests are commonly referred to as Learning Tests.</li>
+<li>Learning tests can also be utilized for assessing new releases of third-party
+packages. By running these tests, we can identify any behavioral differences
+and ensure smooth integration with our existing codebase.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="using-code-that-does-not-yet-exist">Using Code That Does Not Yet Exist<a href="#using-code-that-does-not-yet-exist" class="hash-link" aria-label="Direct link to Using Code That Does Not Yet Exist" title="Direct link to Using Code That Does Not Yet Exist">​</a></h3>
+<ul>
+<li>There is another kind of boundary, one that separates the known from the
+unknown. There are often places in the code where our knowledge seems to drop
+off the edge. Sometimes what is on the other side of the boundary is
+unknowable (at least right now).</li>
+<li>Write the interface you want and then you can define an Adapter that bridges
+the gap between the real API (that you don’t have yet) and the API you wish
+you had.</li>
+</ul></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/category/books"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Books</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/CodingStandards/Books/PragmaticProgrammer"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">The Pragmatic Programmer</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#foreword" class="table-of-contents__link toc-highlight">Foreword</a></li><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#meaningful-names" class="table-of-contents__link toc-highlight">Meaningful Names</a><ul><li><a href="#highlights" class="table-of-contents__link toc-highlight">Highlights</a></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li><li><a href="#experience" class="table-of-contents__link toc-highlight">Experience</a></li><li><a href="#qa" class="table-of-contents__link toc-highlight">Q&amp;A</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#highlights-1" class="table-of-contents__link toc-highlight">Highlights</a></li><li><a href="#summary-1" class="table-of-contents__link toc-highlight">Summary</a></li><li><a href="#experience-1" class="table-of-contents__link toc-highlight">Experience</a></li><li><a href="#qa-1" class="table-of-contents__link toc-highlight">Q&amp;A</a></li></ul></li><li><a href="#take-away-from-session" class="table-of-contents__link toc-highlight">Take Away from session</a></li><li><a href="#chapter-1---clean-code" class="table-of-contents__link toc-highlight">Chapter 1 - Clean code</a></li><li><a href="#chapter-2---meaningful-names" class="table-of-contents__link toc-highlight">Chapter 2 - Meaningful Names</a></li><li><a href="#chapter-3---functions" class="table-of-contents__link toc-highlight">Chapter 3 - Functions</a></li><li><a href="#chapter-4---comments" class="table-of-contents__link toc-highlight">Chapter 4 - Comments</a></li><li><a href="#chapter-5---formatting" class="table-of-contents__link toc-highlight">Chapter 5 - Formatting</a></li><li><a href="#chapter-6---objects-and-data-structures" class="table-of-contents__link toc-highlight">Chapter 6 - Objects and Data Structures</a></li><li><a href="#chapter-7---error-handling" class="table-of-contents__link toc-highlight">Chapter 7 - Error Handling</a></li><li><a href="#chapter-8---boundaries" class="table-of-contents__link toc-highlight">Chapter 8 - Boundaries</a><ul><li><a href="#using-third-party-code" class="table-of-contents__link toc-highlight">Using Third-Party Code</a></li><li><a href="#exploring-and-learning-boundaries" class="table-of-contents__link toc-highlight">Exploring and Learning Boundaries</a></li><li><a href="#using-code-that-does-not-yet-exist" class="table-of-contents__link toc-highlight">Using Code That Does Not Yet Exist</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

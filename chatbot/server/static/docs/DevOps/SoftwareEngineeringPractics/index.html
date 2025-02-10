@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-DevOps/SoftwareEngineeringPractics" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">SoftwareEngineeringPractics | Knowledge Base</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="http://localhost:8000/docs/DevOps/SoftwareEngineeringPractics"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="SoftwareEngineeringPractics | Knowledge Base"><meta data-rh="true" name="description" content="Software Engineering Practices"><meta data-rh="true" property="og:description" content="Software Engineering Practices"><link data-rh="true" rel="canonical" href="http://localhost:8000/docs/DevOps/SoftwareEngineeringPractics"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/DevOps/SoftwareEngineeringPractics" hreflang="en"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/DevOps/SoftwareEngineeringPractics" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Knowledge Base RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Knowledge Base Atom Feed"><link rel="stylesheet" href="/assets/css/styles.c2084c17.css">
+<script src="/assets/js/runtime~main.37b74131.js" defer="defer"></script>
+<script src="/assets/js/main.68f49705.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Home Page</b></a><a class="navbar__item navbar__link" href="/docs/category/fundamentals">AI HUB</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/category/continousintergration">DevOps</a><a class="navbar__item navbar__link" href="/blog">Authors</a></div><div class="navbar__items navbar__items--right"><a href="https://sudeeparyan.github.io/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Webiste<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input"><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/continousintergration">ContinousIntergration</a><button aria-label="Expand sidebar category &#x27;ContinousIntergration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/docker">Docker</a><button aria-label="Expand sidebar category &#x27;Docker&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/trunkbaseddevelopment">TrunkBasedDevelopment</a><button aria-label="Expand sidebar category &#x27;TrunkBasedDevelopment&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/kubernites">Kubernites</a><button aria-label="Expand sidebar category &#x27;Kubernites&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/AcceptanceTable">AcceptanceTable</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/AdoptionProcess">AdoptionProcess</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/DeploymentAutomation">DeploymentAutomation</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/GITVersionControl">GITVersionControl</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/MeasuringSoftwareEngineeringPractics">MeasuringSoftwareEngineeringPractics</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/TestAutomation">TestAutomation</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/docs/DevOps/SoftwareEngineeringPractics">SoftwareEngineeringPractics</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">SoftwareEngineeringPractics</span><meta itemprop="position" content="1"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>SoftwareEngineeringPractics</h1></header><h3 class="anchor anchorWithStickyNavbar_LWe7" id="software-engineering-practices">Software Engineering Practices<a href="#software-engineering-practices" class="hash-link" aria-label="Direct link to Software Engineering Practices" title="Direct link to Software Engineering Practices">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="documentation-practices">Documentation Practices<a href="#documentation-practices" class="hash-link" aria-label="Direct link to Documentation Practices" title="Direct link to Documentation Practices">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="requirement-documentation">Requirement Documentation<a href="#requirement-documentation" class="hash-link" aria-label="Direct link to Requirement Documentation" title="Direct link to Requirement Documentation">​</a></h4>
+<p>Requirement documentation records project objectives, scope, functional, and
+non-functional requirements essential for building the software system.</p>
+<p>It serves as a reference for all stakeholders to ensure alignment and a clear
+understanding of the requirement.</p>
+<p>How to implement</p>
+<ol>
+<li>Guideline<!-- -->
+<ol>
+<li>Should be a markdown (.md) file.</li>
+<li>Should be in the version control of the project.</li>
+<li>All changes should go through the Pull Request(PR) workflow with the
+necessary reviewers and code owners.</li>
+<li>Should include the following contents<!-- -->
+<ol>
+<li>Unambiguously capture functional, and non-functional requirements.</li>
+<li>Clearly defined outcomes and acceptance criteria.</li>
+</ol>
+</li>
+<li>Maintain two levels of requirement documents<!-- -->
+<ol>
+<li>Project or System-level requirements</li>
+<li>Workflow level requirements</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Template<!-- -->
+<ol>
+<li><a href="/Templates/SystemRequirementsTemplate.md">System Requirements Template</a></li>
+<li><a href="/Templates/FeatureRequirementsTemplate.md">Feature Requirements Template</a></li>
+</ol>
+</li>
+<li>When<!-- -->
+<ol>
+<li>Should be created during Pre-sales.</li>
+<li>Should be updated at regular intervals during the project.</li>
+</ol>
+</li>
+<li>Owner<!-- -->
+<ol>
+<li>The <code>Presales Owner</code> should start during the presales</li>
+<li>The <code>Project Lead</code> should maintain the requirement document.</li>
+</ol>
+</li>
+<li>Contributors<!-- -->
+<ol>
+<li>Project Manager</li>
+<li>Tech Lead</li>
+<li>Development Team</li>
+<li>Customer</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>⛔<!-- --> <strong>Risk of not doing</strong></p>
+<ol>
+<li>Unnoticed scope creep</li>
+<li>Improper design</li>
+<li>Wasted effort - time and money</li>
+</ol>
+</blockquote>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="acceptance-table-definition">Acceptance Table Definition<a href="#acceptance-table-definition" class="hash-link" aria-label="Direct link to Acceptance Table Definition" title="Direct link to Acceptance Table Definition">​</a></h4>
+<p>The acceptance table (AT) records all test scenarios (both functional and
+non-functional) that the application should pass for a feature to be called
+<code>Done</code>.</p>
+<p>It is required to verify and validate that all requirements part of the
+acceptance criteria are satisfied.</p>
+<p>How to implement</p>
+<ol>
+<li>Guideline<!-- -->
+<ol>
+<li>Should be done at a feature level.<!-- -->
+<ol>
+<li>All features should have an acceptance criteria (AC) mentioned.</li>
+<li>For each feature, a new acceptance table has to be created.</li>
+</ol>
+</li>
+<li>Should list all test cases in <code>given_when_then</code> format.</li>
+<li>Should include test cases for all line items listed in acceptance criteria
+(AC).</li>
+<li>Should include test cases for both functional and non-functional
+requirements.</li>
+<li>Should indicate if a test case has an automated test and its type (unit,
+integration or E2E).</li>
+<li>Should capture who performed the test and when it was tested if the test
+was manually performed.</li>
+<li>All test cases should directly link to the acceptance criteria ID (in AzDo
+work item or equivalent).</li>
+<li>Should be reviewed and approved by the <code>Tech Lead</code> and <code>Project Lead</code>.</li>
+</ol>
+</li>
+<li>When<!-- -->
+<ol>
+<li>Should be defined during the planning phase for each feature.</li>
+<li>Should be updated and maintained throughout the development process of the
+feature.</li>
+</ol>
+</li>
+<li>Owner<!-- -->
+<ol>
+<li>The <code>Project Lead</code> should define and maintain the acceptance table.</li>
+<li>The <code>Project Lead</code> can delegate ownership to the <code>Feature Lead</code> for
+particular features.</li>
+</ol>
+</li>
+<li>Contributors<!-- -->
+<ol>
+<li>Tech Lead</li>
+<li>Product Owner</li>
+<li>Development Team</li>
+<li>Customer</li>
+<li>QA Engineers</li>
+</ol>
+</li>
+<li></li>
+</ol>
+<blockquote>
+<p>⛔<!-- --> <strong>Risk of not doing</strong></p>
+<ol>
+<li>Poor software quality (bugs, requirement misses)</li>
+<li>Scope creep after development</li>
+<li>Challenges in verifying compliance with AC</li>
+</ol>
+</blockquote>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="technical-documentation">Technical Documentation<a href="#technical-documentation" class="hash-link" aria-label="Direct link to Technical Documentation" title="Direct link to Technical Documentation">​</a></h4>
+<p>Technical documentation records clear and comprehensive information about the
+software - its architecture, design, and usage.</p>
+<p>It serves as a valuable resource for development teams, operations, maintenance
+or support teams, and other stakeholders.</p>
+<p>How to implement</p>
+<ol>
+<li>Guideline<!-- -->
+<ol>
+<li>Should be maintained in the version control system.</li>
+<li>Should be in the same repo (close to the source code)</li>
+<li>Should be easily available and searchable for all readers &amp; contributors.</li>
+<li>List of technical documents to be maintained<!-- -->
+<ol>
+<li>Architecture documents<!-- -->
+<ol>
+<li>C4 Architecture diagrams</li>
+<li>System overview documents</li>
+<li>Database schema documents</li>
+<li>API documents</li>
+<li>Architecture decision records</li>
+</ol>
+</li>
+<li>High-level design documents for each workflow/feature</li>
+<li>Project Handbooks<!-- -->
+<ol>
+<li>Conventions &amp; best practices</li>
+<li>How-To Guides</li>
+</ol>
+</li>
+<li>Release notes</li>
+<li>User-facing documents (as needed)</li>
+</ol>
+</li>
+<li>Guide to writing good technical documents - <a href="/docs/DevOps/TBD">Guide</a></li>
+</ol>
+</li>
+<li>Template<!-- -->
+<ol>
+<li><a href="/docs/DevOps/TBD">Document Repository Templates</a></li>
+</ol>
+</li>
+<li>When<!-- -->
+<ol>
+<li>Should be used throughout the project lifecycle.</li>
+</ol>
+</li>
+<li>Owner<!-- -->
+<ol>
+<li>The <code>Tech Lead</code> should own and organize technical documentation.</li>
+</ol>
+</li>
+<li>Contributors<!-- -->
+<ol>
+<li>Development Team</li>
+<li>Project Lead</li>
+<li>Product Owner</li>
+<li>Project Manager</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>⛔<!-- --> <strong>Risk of not doing</strong></p>
+<ol>
+<li>Lack of common understanding</li>
+<li>Increased onboarding time</li>
+<li>Knowledge silos and people dependency</li>
+<li>Loss of Knowledge over time</li>
+<li>Reinvention of wheel and reduced efficiency</li>
+<li>Need for repeated meetings and on-call time</li>
+</ol>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="code-maintenance-practices">Code Maintenance Practices<a href="#code-maintenance-practices" class="hash-link" aria-label="Direct link to Code Maintenance Practices" title="Direct link to Code Maintenance Practices">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="version-control">Version Control<a href="#version-control" class="hash-link" aria-label="Direct link to Version Control" title="Direct link to Version Control">​</a></h4>
+<p>Version control records all changes made to the files, creating a historical
+record of all modifications, who made them, when they were made, and why.</p>
+<p>It facilitates collaboration and enables disaster recovery. It also makes it
+easy to audit changes.</p>
+<p><a href="/docs/DevOps/VersionControl/Overview.md">Read more on how to adopt Version Control for projects</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="trunk-based-development">Trunk-Based Development<a href="#trunk-based-development" class="hash-link" aria-label="Direct link to Trunk-Based Development" title="Direct link to Trunk-Based Development">​</a></h4>
+<p>Trunk-based development is a version control management practice where
+developers merge small, frequent updates to a core <code>trunk</code> or <code>main</code> branch.</p>
+<p>It reduces conflicts and streamlines the merging, and integration of code.</p>
+<p><a href="/docs/DevOps/TrunkBasedDevelopment/Overview">Read more on why and how to adopt Trunk Based Development for projects</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="code-review">Code Review<a href="#code-review" class="hash-link" aria-label="Direct link to Code Review" title="Direct link to Code Review">​</a></h4>
+<p>Code review is a practice of having peers and code owners review and provide
+feedback on the proposed code change.</p>
+<p>It enhances code quality and enables early identification of issues, drifts in
+quality or best practices.</p>
+<p>How to implement</p>
+<ol>
+<li>Guideline<!-- -->
+<ol>
+<li>Code review should be enforced through pull requests (PR).</li>
+<li>All submissions (code, scripts, documents, assets) to the <code>main</code> branch
+should be reviewed.</li>
+<li>The <code>Code author</code> should create a PR with the proposed change and request
+review comments.</li>
+<li>Review from <code>peers</code> is good to have but getting approval from the
+<code>code owners</code> is mandatory.</li>
+<li>The <code>Code author</code> should communicate clearly -<!-- -->
+<ol>
+<li>Why this change is required</li>
+<li>Changes implemented in the PR</li>
+<li>Summary of automated tests added</li>
+<li>How the changes were tested</li>
+<li>Inline comments and necessary context for async reviewers</li>
+<li>If applicable, add screen shot/screen recordings to describe the change</li>
+</ol>
+</li>
+<li>The <code>Code owner</code> should review and provide feedback on the following -<!-- -->
+<ol>
+<li>Is the submission small and simple for review in 20 minutes?</li>
+<li>Is the code easy to understand and follow?</li>
+<li>Is the code clean and follows best practices, and software design
+principles?</li>
+<li>Is the code architected well?</li>
+<li>Does it follow all coding guidelines agreed upon within the team?</li>
+<li>Does the code adhere to the design agreed upon in high-level design
+documents?</li>
+<li>Does the code introduce defects?</li>
+<li>Are there areas where code can be improved or simplified?</li>
+<li>Is the pipeline passing with no errors or warnings?</li>
+</ol>
+</li>
+<li>The <code>Code owner</code> (and reviewers) should mark their vote explicitly after
+review (use equivalents of these votes in other code review tools) -<!-- -->
+<ol>
+<li>Approved - The reviewer found no issues (for their area of expertise)</li>
+<li>Approved with suggestions - The reviewer has some feedback that needs
+to be addressed before submitting</li>
+<li>Wait for Author - <strong>Cannot submit</strong>, The reviewer needs
+clarification/actions from the author</li>
+<li>Rejected - <strong>Cannot submit</strong>, Fundamental issues that need
+rework/alignment</li>
+</ol>
+</li>
+<li>The <code>Code owner</code> should communicate clearly -<!-- -->
+<ol>
+<li>Reason for their votes</li>
+<li>What needs to be addressed before re-requesting review?</li>
+<li>Differentiate suggestions and comments that are non-negotiable and use
+prefixes like <code>await</code>, <code>major</code>, and <code>must-fix:</code> to make blocking
+comments</li>
+<li>Background and reference(s) for comments (wherever applicable)</li>
+</ol>
+</li>
+<li>The <code>Code author</code> should address all feedback and re-request review if
+required.</li>
+<li>Once approved, the <code>Code author</code> should ensure all feedback is addressed
+and changes are merged to the <code>main</code> branch.</li>
+<li>For rudimentary changes, <code>Code author</code> can bypass reviews from
+<code>Code owners</code> after getting changes reviewed from at least one another
+<code>Code reviewer</code></li>
+<li>Read more-
+<a href="https://google.github.io/eng-practices/review/reviewer/" target="_blank" rel="noopener noreferrer">Code Review Handbook</a>,
+<a href="https://google.github.io/eng-practices/review/developer/" target="_blank" rel="noopener noreferrer">Code Authors Handbook</a></li>
+</ol>
+</li>
+<li>When<!-- -->
+<ol>
+<li>Should be used throughout the development process.</li>
+</ol>
+</li>
+<li>Owner<!-- -->
+<ol>
+<li>The <code>Tech Lead</code> should own and enforce the code review process.</li>
+<li>The <code>Tech Lead</code> can delegate ownership to <code>Code owners</code> when required.</li>
+</ol>
+</li>
+<li>Contributors<!-- -->
+<ol>
+<li>Development Team</li>
+<li>QA Engineers</li>
+<li>Project Lead</li>
+<li>Product Owner</li>
+<li>Customer</li>
+</ol>
+</li>
+<li>Refer
+<a href="/docs/MeasuringSoftwareEngineeringPractices.md#code-review">code review metrics</a>
+to measure the effectiveness of this practice in a project</li>
+</ol>
+<blockquote>
+<p>⛔<!-- --> <strong>Risk of not doing</strong></p>
+<ol>
+<li>Suboptimal quality of code or artifacts submitted</li>
+<li>High chance of application design failures</li>
+<li>Stability and security issues due to lack of review</li>
+<li>Lack of consistency</li>
+<li>Lack of knowledge sharing and hindered growth</li>
+</ol>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="testing-and-quality-practices">Testing and Quality Practices<a href="#testing-and-quality-practices" class="hash-link" aria-label="Direct link to Testing and Quality Practices" title="Direct link to Testing and Quality Practices">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="test-automation">Test Automation<a href="#test-automation" class="hash-link" aria-label="Direct link to Test Automation" title="Direct link to Test Automation">​</a></h4>
+<p>Test automation involves systematically running automated tests to verify
+software functionality and performance of the system, component, module or unit
+under test.</p>
+<p>It ensures code correctness, and early defect detection, and reduces the risk of
+production errors. It also improves developer efficiency</p>
+<p>How to implement</p>
+<ol>
+<li>Guideline<!-- -->
+<ol>
+<li>Set up a test automation framework at the start of the project.</li>
+<li>Write and run tests continuously throughout the delivery process.</li>
+<li>Pick a
+<a href="https://www.linkedin.com/pulse/pyramid-diamond-honeycomb-trophy-find-testing-strategy-fits/?trk=article-ssr-frontend-pulse_more-articles_related-content-card" target="_blank" rel="noopener noreferrer">testing strategy</a>
+and continuously tune it.</li>
+<li>Add automated tests for all code changes (in the same PR).</li>
+<li>Ensure all regression tests are passing for all code changes.</li>
+<li>Use
+<a href="https://www.ibm.com/topics/shift-left-testing" target="_blank" rel="noopener noreferrer">shift left testing approach</a></li>
+<li>Complement manual tests along with automated tests (like exploratory
+testing, and usability testing)</li>
+<li>Read more<!-- -->
+<ol>
+<li><a href="/docs/TestAutomation.md">Test automation document</a></li>
+<li><a href="https://dora.dev/devops-capabilities/technical/test-automation/" target="_blank" rel="noopener noreferrer">DORA Test automation</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>When<!-- -->
+<ol>
+<li>Should be used throughout the development and deployment process.</li>
+</ol>
+</li>
+<li>Owner<!-- -->
+<ol>
+<li>The <code>Tech Lead</code> should enforce testing automation with the right
+strategies.</li>
+</ol>
+</li>
+<li>Contributors<!-- -->
+<ol>
+<li>Development Team</li>
+<li>QA Engineers</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>⛔<!-- --> <strong>Risk of not doing</strong></p>
+<ol>
+<li>Lack of stability and failures in production</li>
+<li>Severe quality defects due to lack of regression testing</li>
+<li>Security vulnerabilities</li>
+<li>Performance gaps</li>
+<li>Increased post-release maintenance</li>
+<li>Stress and burnout for developers</li>
+</ol>
+</blockquote>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="continuous-integration-ci">Continuous Integration (CI)<a href="#continuous-integration-ci" class="hash-link" aria-label="Direct link to Continuous Integration (CI)" title="Direct link to Continuous Integration (CI)">​</a></h4>
+<p>Continuous Integration is the practice of frequently integrating code changes
+into a shared repository and running automated tests. It ensures code
+reliability, identifies integration issues early, and improves development
+collaboration.</p>
+<p><a href="/docs/DevOps/ContinuousIntegration/Overview.md">Read more on why and how to adopt Continuous Integration for projects</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-automation">Deployment Automation<a href="#deployment-automation" class="hash-link" aria-label="Direct link to Deployment Automation" title="Direct link to Deployment Automation">​</a></h4>
+<p>Deployment automation is what enables the deployment of your software with the
+push of a button.</p>
+<p><a href="/docs/DevOps/DeploymentAutomation/Overview.md">Read more on why and how to adopt Deployment Automation for projects</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="need-driven-software-engineering-practices">Need-driven Software Engineering Practices<a href="#need-driven-software-engineering-practices" class="hash-link" aria-label="Direct link to Need-driven Software Engineering Practices" title="Direct link to Need-driven Software Engineering Practices">​</a></h2>
+<p>Below is a list of <strong>NEED-DRIVEN</strong> software engineering practices that can be
+considered based on project needs and the team&#x27;s objectives.</p>
+<table><thead><tr><th>S.No</th><th>Practice</th><th>Description</th><th>Who Owns</th><th>Guideline</th></tr></thead><tbody><tr><td>1</td><td>Continuous Delivery</td><td>Ability to release changes of all kinds on demand quickly, safely, and sustainably</td><td><code>Tech Lead</code></td><td><a href="https://dora.dev/devops-capabilities/technical/continuous-delivery/" target="_blank" rel="noopener noreferrer">Continuous Delivery</a></td></tr><tr><td>2</td><td>Monitoring and Observability</td><td>Tool or solution that allows to watch, understand and actively debug complex systems</td><td><code>Tech Lead</code></td><td><a href="https://dora.dev/devops-capabilities/technical/monitoring-and-observability/" target="_blank" rel="noopener noreferrer">Monitoring and observability</a></td></tr><tr><td>3</td><td>Shifting left on Security</td><td>Address security concerns earliest in the software development lifecycle</td><td><code>Tech Lead</code></td><td><a href="https://dora.dev/devops-capabilities/technical/shifting-left-on-security/" target="_blank" rel="noopener noreferrer">Shifting left on security</a></td></tr><tr><td>4</td><td>Test data management</td><td>Strategy to generate, manage and share good test data</td><td><code>Tech Lead</code></td><td><a href="https://dora.dev/devops-capabilities/technical/test-data-management/" target="_blank" rel="noopener noreferrer">Test data management</a></td></tr><tr><td>5</td><td>Database change management</td><td>Managing configurations and communication to avoid risk and delay when performing deployments</td><td><code>Tech Lead</code></td><td><a href="https://dora.dev/devops-capabilities/technical/database-change-management/" target="_blank" rel="noopener noreferrer">Database change management</a></td></tr><tr><td>6</td><td>Flexible Infrastructure</td><td>Allows for provisioning environments, make configuration changes, and execute deployments through an automated mechanism</td><td><code>Tech Lead</code></td><td><a href="https://dora.dev/devops-capabilities/technical/flexible-infrastructure/" target="_blank" rel="noopener noreferrer">Flexible infrastructure</a></td></tr></tbody></table></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/DevOps/TestAutomation"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">TestAutomation</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#software-engineering-practices" class="table-of-contents__link toc-highlight">Software Engineering Practices</a></li><li><a href="#documentation-practices" class="table-of-contents__link toc-highlight">Documentation Practices</a></li><li><a href="#code-maintenance-practices" class="table-of-contents__link toc-highlight">Code Maintenance Practices</a></li><li><a href="#testing-and-quality-practices" class="table-of-contents__link toc-highlight">Testing and Quality Practices</a></li><li><a href="#need-driven-software-engineering-practices" class="table-of-contents__link toc-highlight">Need-driven Software Engineering Practices</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

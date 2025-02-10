@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksudeeparyan_knowledgebase=self.webpackChunksudeeparyan_knowledgebase||[]).push([[7472],{55513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Authors","permalink":"/blog/welcome","unlisted":false,"date":"2024-10-19T00:00:00.000Z"}]}')}}]);

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-DevOps/TrunkBasedDevelopment/ReleaseProcess" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">ReleaseProcess | Knowledge Base</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="http://localhost:8000/docs/DevOps/TrunkBasedDevelopment/ReleaseProcess"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="ReleaseProcess | Knowledge Base"><meta data-rh="true" name="description" content="Trunk-based development"><meta data-rh="true" property="og:description" content="Trunk-based development"><link data-rh="true" rel="canonical" href="http://localhost:8000/docs/DevOps/TrunkBasedDevelopment/ReleaseProcess"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/DevOps/TrunkBasedDevelopment/ReleaseProcess" hreflang="en"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/DevOps/TrunkBasedDevelopment/ReleaseProcess" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Knowledge Base RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Knowledge Base Atom Feed"><link rel="stylesheet" href="/assets/css/styles.c2084c17.css">
+<script src="/assets/js/runtime~main.37b74131.js" defer="defer"></script>
+<script src="/assets/js/main.68f49705.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Home Page</b></a><a class="navbar__item navbar__link" href="/docs/category/fundamentals">AI HUB</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/category/continousintergration">DevOps</a><a class="navbar__item navbar__link" href="/blog">Authors</a></div><div class="navbar__items navbar__items--right"><a href="https://sudeeparyan.github.io/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Webiste<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input"><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/continousintergration">ContinousIntergration</a><button aria-label="Expand sidebar category &#x27;ContinousIntergration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/docker">Docker</a><button aria-label="Expand sidebar category &#x27;Docker&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/trunkbaseddevelopment">TrunkBasedDevelopment</a><button aria-label="Collapse sidebar category &#x27;TrunkBasedDevelopment&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/DevOps/TrunkBasedDevelopment/Overview">Trunk Based Development (TBD)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/DevOps/TrunkBasedDevelopment/ReleaseProcess">ReleaseProcess</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/kubernites">Kubernites</a><button aria-label="Expand sidebar category &#x27;Kubernites&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/AcceptanceTable">AcceptanceTable</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/AdoptionProcess">AdoptionProcess</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/DeploymentAutomation">DeploymentAutomation</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/GITVersionControl">GITVersionControl</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/MeasuringSoftwareEngineeringPractics">MeasuringSoftwareEngineeringPractics</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/TestAutomation">TestAutomation</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/SoftwareEngineeringPractics">SoftwareEngineeringPractics</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/trunkbaseddevelopment"><span itemprop="name">TrunkBasedDevelopment</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">ReleaseProcess</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>ReleaseProcess</h1></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="trunk-based-development">Trunk-based development<a href="#trunk-based-development" class="hash-link" aria-label="Direct link to Trunk-based development" title="Direct link to Trunk-based development">​</a></h2>
+<p>Release process for Trunk-based development can be decided based on the release
+cadence of each team.</p>
+<ol>
+<li>If the team does very frequent release (like one release per day), they can
+go with
+&#x27;<a href="https://trunkbaseddevelopment.com/release-from-trunk/" target="_blank" rel="noopener noreferrer">Release from trunk</a>&#x27;
+strategy.</li>
+<li>The teams with low release cadence (cycle/iteration releases - one release
+per sprint or month) can follow
+&#x27;<a href="https://trunkbaseddevelopment.com/branch-for-release/" target="_blank" rel="noopener noreferrer">Branch for release</a>&#x27;
+strategy.</li>
+</ol>
+<p>This document provides more details on the release process based on frequency of
+release.</p>
+<p>[[<em>TOC</em>]]</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="recommended-release-process-for-teams-with-low-release-cadence">Recommended Release Process for teams with low release cadence<a href="#recommended-release-process-for-teams-with-low-release-cadence" class="hash-link" aria-label="Direct link to Recommended Release Process for teams with low release cadence" title="Direct link to Recommended Release Process for teams with low release cadence">​</a></h2>
+<p>For teams with low release cadence, they can go with &#x27;Branch for release&#x27;
+strategy. This is the default recommendation for teams. It also helps in
+handling intermediate bug fix releases seamlessly.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="roles-involved">Roles involved<a href="#roles-involved" class="hash-link" aria-label="Direct link to Roles involved" title="Direct link to Roles involved">​</a></h3>
+<ul>
+<li><strong>Release owner</strong> - A designated person from the development team can act as
+release owner for a particular release. This role can be assigned to
+developers on a rotational basis</li>
+<li><strong>Tech Lead</strong></li>
+<li><strong>Developers</strong></li>
+<li><strong>QA</strong></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="release-process">Release process<a href="#release-process" class="hash-link" aria-label="Direct link to Release process" title="Direct link to Release process">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Release from branch" src="/assets/images/tbd-release-from-branch-d05312337aa9ea3fd9044a378ce64b78.jpg" width="698" height="398" class="img_ev3q"></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="taking-release-branch">Taking release branch<a href="#taking-release-branch" class="hash-link" aria-label="Direct link to Taking release branch" title="Direct link to Taking release branch">​</a></h4>
+<ol>
+<li>Once all the features required for the release are available in trunk,
+release owner takes a <code>release branch</code> from the <code>trunk</code></li>
+<li>If version updates are done manually, the right version for the upcoming
+release has to be updated in <code>trunk</code> before taking the <code>release branch</code>.</li>
+<li>The <code>release branch</code> can be named as <code>release/&lt;version-number&gt;</code> (Example:
+<code>release/1.0.0</code>)<!-- -->
+<ol>
+<li>We can also have &#x27;x&#x27; in place of bugfix version in the release branch
+name, so that it is more evident that all the bug fixes for a particular
+release are handled in this release branch (Example: <code>release/1.0.x</code>)</li>
+</ol>
+</li>
+<li>The feature development can continue in <code>trunk</code> but <code>release branch</code> should
+not receive any new updates.</li>
+<li><code>Release branch</code> acts as the stable place for testing and other release
+activities.</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="release-testing">Release testing<a href="#release-testing" class="hash-link" aria-label="Direct link to Release testing" title="Direct link to Release testing">​</a></h4>
+<ol>
+<li>After the <code>release branch</code> is taken, the release owner deploys it to the
+staging environment (if applicable) and initiates the release testing process
+by informing the QA team.<!-- -->
+<ul>
+<li>If dedicated QA team is not available, the equivalent role has to be played
+by the developers during release time</li>
+</ul>
+</li>
+<li>The duration of release testing depends on the nature of the project and
+whether or not test automation is in place. If there is no test automation, a
+significantly higher amount of time has to be put in for the release testing.
+It should ensure rigorous testing of all the features in the application and
+not just focus on the newly added features.</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="handling-bug-fixes">Handling bug fixes<a href="#handling-bug-fixes" class="hash-link" aria-label="Direct link to Handling bug fixes" title="Direct link to Handling bug fixes">​</a></h4>
+<ol>
+<li>When a bug is identified during release testing, it should be assigned to a
+developer. They will be considered as the bug fix owner.</li>
+<li>The bug fix owner should do the following<!-- -->
+<ol>
+<li>Reproduce the bug in <code>trunk</code></li>
+<li>Take a <code>user branch</code> from <code>trunk</code></li>
+<li>Fix the bug in the <code>user branch</code></li>
+<li>Test the changes in dev environment</li>
+<li>If applicable, update the test cases to make sure the bug will be captured
+in automation going forward</li>
+<li>Raise a PR from <code>user branch</code> to <code>trunk</code></li>
+</ol>
+</li>
+<li>The PR has to be reviewed by Tech Lead / Code owner and merged to <code>trunk</code></li>
+<li>Once the bug fix is merged to <code>trunk</code>, bug fix owner should do the following,<!-- -->
+<ol>
+<li>Create a <code>user branch</code> from <code>release branch</code></li>
+<li>Cherry pick the bug fix commit from <code>trunk</code> in to the <code>user branch</code></li>
+<li>Raise a PR from <code>user branch</code> to <code>release branch</code></li>
+</ol>
+</li>
+<li>Release owner is responsible for reviewing and merging the cherry-picked bug
+fix PR to <code>release branch</code> and redeploying it to staging to continue with
+release testing</li>
+<li><strong>Note</strong>: In very rare cases where the bug is not reproducible in <code>trunk</code> but
+happening only in <code>release branch</code>, the <code>user branch</code> can be taken from
+<code>release branch</code> instead of <code>trunk</code>. Fix and merge to <code>release branch</code>,
+cherry-pick the bug fix commit from <code>release branch</code> to <code>trunk</code> as needed to
+make sure the fix is applied in both the places (<code>release branch</code> and
+<code>trunk</code>)</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="completing-the-release">Completing the release<a href="#completing-the-release" class="hash-link" aria-label="Direct link to Completing the release" title="Direct link to Completing the release">​</a></h4>
+<ol>
+<li>When the release testing is complete and QA team has given a &#x27;GO&#x27;,<!-- -->
+<ol>
+<li>Tag the top commit in release branch with the appropriate release label.
+The tag format can be <code>v&lt;version number&gt;</code> . (Example: <code>v1.0.0</code>)</li>
+</ol>
+</li>
+<li>After the release, the <code>release branch</code> can stay alive for some time until
+the released version is stable, typically for about a month.</li>
+<li>If there are any production issues in the released version that needs a patch
+/ bug fix release, make use of the same <code>release branch</code> to fix the issues
+and make the patch release.<!-- -->
+<ol>
+<li>The bug fix has to go through the same process as mentioned in the
+<a href="#handling-bug-fixes">above section.</a></li>
+<li>Make sure to add tags for all such interim releases.</li>
+</ol>
+</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="deleting-the-release-branch">Deleting the release branch<a href="#deleting-the-release-branch" class="hash-link" aria-label="Direct link to Deleting the release branch" title="Direct link to Deleting the release branch">​</a></h4>
+<ol>
+<li>Once the release is well stabilized, the release branch can be deleted.</li>
+<li>Note that release branch need not be merged to trunk.</li>
+<li>The released commit can be tracked anytime using the tags that are created,
+hence the release branch is safe to be deleted if you have the right tags in
+place.</li>
+<li><strong>Note:</strong> The above suggestion is based on Git version control system. If you
+are using a different VCS, it is important to understand how tagging works
+there before deciding to delete release branch</li>
+</ol>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="when-not-to-delete-release-branch"><strong>When not to delete release branch</strong><a href="#when-not-to-delete-release-branch" class="hash-link" aria-label="Direct link to when-not-to-delete-release-branch" title="Direct link to when-not-to-delete-release-branch">​</a></h5>
+<ol>
+<li>Never delete the release branch <strong>without creating proper tags</strong> to refer to
+the released commits. Once the release branch is deleted, if the commits are
+not tagged, it will be garbage collected by git as dangling commits</li>
+<li>Never delete the release branch if the version control system you are using
+<strong>doesn&#x27;t allow creating tags</strong></li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="recommended-release-process-for-teams-with-high-release-cadence">Recommended Release Process for teams with high release cadence<a href="#recommended-release-process-for-teams-with-high-release-cadence" class="hash-link" aria-label="Direct link to Recommended Release Process for teams with high release cadence" title="Direct link to Recommended Release Process for teams with high release cadence">​</a></h2>
+<p>For teams with high release cadence, the recommendation is to go with &#x27;Release
+from trunk&#x27; strategy.</p>
+<ol>
+<li>Ideally for high release cadence teams, there should be complete test
+automation and CI/CD in place to deliver directly from Trunk</li>
+<li>The released commit in trunk has to be tagged to track the release later</li>
+<li>Feature flags should be in place to hide any work in progress</li>
+<li>Any production issues will be dealt in fix forward approach where the updates
+will be made in trunk and released again.</li>
+</ol>
+<p><strong>Note:</strong> &#x27;Release from trunk&#x27; strategy is less likely to be followed . Hence the process is not explained in detail in this document.</p>
+<h1>Frequently Asked Questions (FAQs)</h1>
+<blockquote>
+<p>When Task B is dependent on Task A which is not yet merged and in PR still,
+where to take the branch for Task B and how to merge it back?</p>
+</blockquote>
+<ul>
+<li>Take the branch for Task B from Task A. If Task B is completed, raise a PR to
+Task A(if it is still not merged to trunk). This helps in reviewing only the
+specific changes</li>
+<li>If Task B PR is approved. Wait for Task A to be merged to trunk. Then redirect
+Task B PR to trunk and merge it to trunk</li>
+<li>Note: Any merge should happen only to trunk</li>
+</ul>
+<blockquote>
+<p>In our project, we follow milestone based releases and the frequency is not
+high. In this case, I do not see a need for hiding incomplete features using
+feature flags. Is this okay?</p>
+</blockquote>
+<ul>
+<li>Ideally when we follow trunk based development, we should aim to have the
+trunk in releasable state always. If the project nature doesn&#x27;t demand for
+frequent releases, you can make the decision to skip feature flags. But we
+should have clarity on how to implement feature flag if a need arises.</li>
+</ul></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/DevOps/TrunkBasedDevelopment/Overview"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Trunk Based Development (TBD)</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/category/kubernites"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Kubernites</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#trunk-based-development" class="table-of-contents__link toc-highlight">Trunk-based development</a></li><li><a href="#recommended-release-process-for-teams-with-low-release-cadence" class="table-of-contents__link toc-highlight">Recommended Release Process for teams with low release cadence</a><ul><li><a href="#roles-involved" class="table-of-contents__link toc-highlight">Roles involved</a></li><li><a href="#release-process" class="table-of-contents__link toc-highlight">Release process</a></li></ul></li><li><a href="#recommended-release-process-for-teams-with-high-release-cadence" class="table-of-contents__link toc-highlight">Recommended Release Process for teams with high release cadence</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

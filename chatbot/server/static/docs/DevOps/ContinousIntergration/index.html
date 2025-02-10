@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-DevOps/ContinousIntergration/ContinousIntergration" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">Continuous Integration (CI) | Knowledge Base</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="http://localhost:8000/docs/DevOps/ContinousIntergration/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Continuous Integration (CI) | Knowledge Base"><meta data-rh="true" name="description" content="[[TOC]]"><meta data-rh="true" property="og:description" content="[[TOC]]"><link data-rh="true" rel="canonical" href="http://localhost:8000/docs/DevOps/ContinousIntergration/"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/DevOps/ContinousIntergration/" hreflang="en"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/DevOps/ContinousIntergration/" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Knowledge Base RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Knowledge Base Atom Feed"><link rel="stylesheet" href="/assets/css/styles.c2084c17.css">
+<script src="/assets/js/runtime~main.37b74131.js" defer="defer"></script>
+<script src="/assets/js/main.68f49705.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Home Page</b></a><a class="navbar__item navbar__link" href="/docs/category/fundamentals">AI HUB</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/category/continousintergration">DevOps</a><a class="navbar__item navbar__link" href="/blog">Authors</a></div><div class="navbar__items navbar__items--right"><a href="https://sudeeparyan.github.io/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Webiste<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input"><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/continousintergration">ContinousIntergration</a><button aria-label="Collapse sidebar category &#x27;ContinousIntergration&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/DevOps/ContinousIntergration/">Continuous Integration (CI)</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/docker">Docker</a><button aria-label="Expand sidebar category &#x27;Docker&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/trunkbaseddevelopment">TrunkBasedDevelopment</a><button aria-label="Expand sidebar category &#x27;TrunkBasedDevelopment&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/kubernites">Kubernites</a><button aria-label="Expand sidebar category &#x27;Kubernites&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/AcceptanceTable">AcceptanceTable</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/AdoptionProcess">AdoptionProcess</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/DeploymentAutomation">DeploymentAutomation</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/GITVersionControl">GITVersionControl</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/MeasuringSoftwareEngineeringPractics">MeasuringSoftwareEngineeringPractics</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/TestAutomation">TestAutomation</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/DevOps/SoftwareEngineeringPractics">SoftwareEngineeringPractics</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/continousintergration"><span itemprop="name">ContinousIntergration</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Continuous Integration (CI)</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Continuous Integration (CI)</h1></header>
+<p>[[<em>TOC</em>]]</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="understanding">Understanding<a href="#understanding" class="hash-link" aria-label="Direct link to Understanding" title="Direct link to Understanding">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h3>
+<p>Continuous Integration (CI) is the practice of frequently integrating code<br>
+<!-- -->changes and running automated tests. Understand in detail
+<a href="https://dora.dev/devops-capabilities/technical/continuous-integration/" target="_blank" rel="noopener noreferrer">here</a>
+before proceeding.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why">Why?<a href="#why" class="hash-link" aria-label="Direct link to Why?" title="Direct link to Why?">​</a></h3>
+<p>CI is considered to be one of the core engineering software practices
+because:</p>
+<ol>
+<li>Integration issues can be detected very early and frequently</li>
+<li>Fast feedback loop on impact of current code changes to other code modules</li>
+<li>Automated checks to ensure consistent code quality before it goes into main
+source code</li>
+<li>Better builds and artifactory management</li>
+</ol>
+<p>CI is primarily becoming a need to have to succeed in today&#x27;s market conditions.
+This is evident from below distribution of research data from
+<a href="https://cloud.google.com/devops/state-of-devops" target="_blank" rel="noopener noreferrer">State of DevOps Report 2023</a>.
+The distribution denotes that already more than half of software organizations
+have modified their operations to include CI.</p>
+<ul>
+<li>Mean - Average value of whole data</li>
+<li>Median - The middle value in a distribution of data. If it is dramatically
+different from the mean, it might indicate that the data is skewed</li>
+<li>Inter Quartile Range (IQR) - By giving you the two numbers (25th and 75th
+percentiles) where the middle 50% of the data resides, these boundaries should
+help convey the spread of responses.</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="CI DORA Research Data" src="/assets/images/ci-dora-research-349eb46b9cd6422d421369eab8e6cd8f.png" width="346" height="309" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-will-be-the-impacts-of-ci">What will be the impacts of CI?<a href="#what-will-be-the-impacts-of-ci" class="hash-link" aria-label="Direct link to What will be the impacts of CI?" title="Direct link to What will be the impacts of CI?">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="customer-impact">Customer Impact<a href="#customer-impact" class="hash-link" aria-label="Direct link to Customer Impact" title="Direct link to Customer Impact">​</a></h4>
+<ol>
+<li>Short Term - Increase in delivery speed of business features without
+compromising quality</li>
+<li>Long Term - Confidence in software quality &amp; releasability having complex
+integrated modules</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="team-impact">Team Impact<a href="#team-impact" class="hash-link" aria-label="Direct link to Team Impact" title="Direct link to Team Impact">​</a></h4>
+<ol>
+<li>Short Term - Forget manual effort of creating builds, running tests or static
+code analysis checks at regular intervals</li>
+<li>Long Term - Enhanced collaboration, team cohesion and satisfaction as
+integration hassles are significantly reduced</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="utilization-impact">Utilization Impact<a href="#utilization-impact" class="hash-link" aria-label="Direct link to Utilization Impact" title="Direct link to Utilization Impact">​</a></h4>
+<ol>
+<li>Short Term - More development time &amp; less integration issues debugging time
+(which are hard to trace back)</li>
+<li>Long Term - Increase in effective utilization directly contributing to
+revenue, quality while saving time</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="key-differences-between-continuous-integration-ci-continuous-deployment-cd-and-continuous-delivery">Key differences between Continuous Integration (CI), Continuous Deployment (CD) and Continuous Delivery<a href="#key-differences-between-continuous-integration-ci-continuous-deployment-cd-and-continuous-delivery" class="hash-link" aria-label="Direct link to Key differences between Continuous Integration (CI), Continuous Deployment (CD) and Continuous Delivery" title="Direct link to Key differences between Continuous Integration (CI), Continuous Deployment (CD) and Continuous Delivery">​</a></h3>
+<p>Continuous Integration (CI) focuses on automating the integration and validation
+of code changes, while Continuous Deployment (CD) automatically deploys every
+successful code change to production without manual intervention.
+<img decoding="async" loading="lazy" alt="Difference between CI and CD" src="/assets/images/ci-difference_btw-ci-cd-2f5afc868921eb69ceed0596c55a4697.png" width="1265" height="848" class="img_ev3q"></p>
+<p>Continuous delivery is commonly conflated with continuous deployment, but they
+are separate practices. Continuous deployment is when teams try to deploy every
+code change to production as soon as possible. Continuous deployment works well
+for web services, but can’t be applied to software such as firmware or mobile
+apps. Continuous delivery is applied to all kinds of software including firmware
+and mainframe systems, and in highly regulated environments.</p>
+<p><img decoding="async" loading="lazy" alt="Difference between CI and CDs" src="/assets/images/ci-difference-btw-ci-cds-04f398f542cacd50bc7e95fbfcc7646c.png" width="1767" height="920" class="img_ev3q"></p>
+<p>As you acknowledge from the above differences, CI phase stops with build &amp; test.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pre-requisites-for-effectiveness">Pre-requisites for effectiveness<a href="#pre-requisites-for-effectiveness" class="hash-link" aria-label="Direct link to Pre-requisites for effectiveness" title="Direct link to Pre-requisites for effectiveness">​</a></h3>
+<p>Trunk based development enhances CI practice&#x27;s effectiveness. It helps to commit
+small code batches across all modules into one central trunk, thereby enabling
+incrementally small integration steps. In a way trunk based development is also
+a required practice for effective continuous integration</p>
+<p>For more details refer to
+<a href="https://dora.dev/devops-capabilities/technical/trunk-based-development/" target="_blank" rel="noopener noreferrer">DORA&#x27;s trunk based development practice</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="risks-of-not-following">Risks of not following<a href="#risks-of-not-following" class="hash-link" aria-label="Direct link to Risks of not following" title="Direct link to Risks of not following">​</a></h3>
+<blockquote>
+<p>⛔<!-- --> Failing to follow CI can lead to</p>
+<ol>
+<li>Infrequent integration that leads to quality issues</li>
+<li>Broken or unusable application state</li>
+<li>Delayed defects discovery</li>
+<li>Difficult merges and overall slower development</li>
+<li>Poor developer productivity</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>⚠️<!-- --> <strong>Note:</strong></p>
+<p>When starting to adopt CI, Tech Lead should take care of the following,</p>
+<ol>
+<li>Mindset shift for identifying integration issues early rather than
+addressing just before release</li>
+<li>Understanding current setup to identify pain points</li>
+<li>Deciding what level of CI is needed in my project based on pain points</li>
+<li>Educating and aligning with customers on CI</li>
+</ol>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="implementation">Implementation<a href="#implementation" class="hash-link" aria-label="Direct link to Implementation" title="Direct link to Implementation">​</a></h2>
+<p>Following are the typical stages in CI, which can be adjusted based on project
+needs</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="stage-1---automate-in-local">Stage 1 - Automate in local<a href="#stage-1---automate-in-local" class="hash-link" aria-label="Direct link to Stage 1 - Automate in local" title="Direct link to Stage 1 - Automate in local">​</a></h3>
+<blockquote>
+<p>🏁<!-- --> Focus on automating build creation, test runs and lint checks
+locally</p>
+</blockquote>
+<ol>
+<li>Ensure that build command is available for packaging, otherwise create an
+automated build script</li>
+<li>Existing manual test cases should be converted into automated test cases -
+unit, integration or acceptance tests</li>
+<li>Install &amp; setup static code analysis
+tools for:<!-- -->
+<ul>
+<li>Linting</li>
+<li>Formatting</li>
+<li>Spelling checks for documentation</li>
+</ul>
+</li>
+<li>Install &amp; setup security vulnerability scan tools
+(<a href="https://docs.npmjs.com/cli/v10/commands/npm-audit" target="_blank" rel="noopener noreferrer">npm audit example</a>)</li>
+<li>Get builds, configuration, automated tests, static code analysis checks,
+security vulnerability scans - Command Line Interface (CLI) ready in local
+setup</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="stage-2---setup-pipelines">Stage 2 - Setup pipelines<a href="#stage-2---setup-pipelines" class="hash-link" aria-label="Direct link to Stage 2 - Setup pipelines" title="Direct link to Stage 2 - Setup pipelines">​</a></h3>
+<blockquote>
+<p>🏁<!-- --> Focus on setting up pipeline triggers before and after PR
+merges</p>
+</blockquote>
+<ol>
+<li>Setup pipeline in projects using CI tools for the platform
+(<a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/create-first-pipeline?view=azure-devops&amp;tabs=java%2Ctfs-2018-2%2Cbrowser#prerequisites---azure-devops" target="_blank" rel="noopener noreferrer">AzDO pipelines</a>,
+<a href="https://docs.github.com/en/actions/quickstart" target="_blank" rel="noopener noreferrer">Github Actions</a>, Travis CI,
+Jenkins, etc.)</li>
+<li>Create CI workflow scripts in the chosen tool to:<!-- -->
+<ol>
+<li>Trigger creation of build artifacts &amp; packages</li>
+<li>Run automated tests (Parallelize test execution wherever possible)</li>
+<li>Run Linting, spell checking, formatting</li>
+<li>Run security vulnerability scans</li>
+</ol>
+</li>
+<li>Publish builds and other artifacts to artifact repositories to manage
+versions and disaster recovery<!-- -->
+<ol>
+<li>Azure Artifacts</li>
+<li>Github Actions Artifacts</li>
+<li>JFrog</li>
+</ol>
+</li>
+<li>Establish a process within team to write automated tests for each PR to cover
+the scope of developed code in that PR</li>
+<li>Setup triggers to run CI pipeline:<!-- -->
+<ol>
+<li>When a new PR is created and for each new commits to that PR</li>
+<li>After the PR is merged to main/trunk</li>
+</ol>
+</li>
+<li>PR merges should be blocked on any CI pipeline failure</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="stage-3---report--fix">Stage 3 - Report &amp; Fix<a href="#stage-3---report--fix" class="hash-link" aria-label="Direct link to Stage 3 - Report &amp; Fix" title="Direct link to Stage 3 - Report &amp; Fix">​</a></h3>
+<blockquote>
+<p>🏁<!-- --> Focus on reporting and fixing the pipeline failures</p>
+</blockquote>
+<ol>
+<li>
+<p>Setup below notification alerts on pipeline failures. Let&#x27;s take example of
+AzDO:</p>
+<ol>
+<li>Setup dashboards for analyzing pipeline (or) build health over a period
+(say last 15 days)</li>
+<li>Setup email notifications to alert on pipeline failures</li>
+<li>Setup Microsoft teams notifications to alert on pipeline failure</li>
+</ol>
+</li>
+<li>
+<p>On failure, focus on fixing the issue first before proceeding.</p>
+</li>
+<li>
+<p>Do not ignore any intermittent test failures through re-run and merge.
+Identify root cause promptly and fix them</p>
+</li>
+<li>
+<p>Do not ignore random build failures. Again identify root cause promptly and
+fix them</p>
+</li>
+<li>
+<p>CI output logs should be developer friendly to narrow down to root cause
+sooner</p>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="non-negotiable-items">Non-negotiable items<a href="#non-negotiable-items" class="hash-link" aria-label="Direct link to Non-negotiable items" title="Direct link to Non-negotiable items">​</a></h3>
+<p>To ensure the success of the Continuous Integration (CI) process, certain
+non-negotiable should be adhered to across the mentioned stages:</p>
+<ol>
+<li>Version control to check-in repository files</li>
+<li>Compile time extensions in local for automatic error highlighting and fixing:<!-- -->
+<ol>
+<li>Static Code Analyzer Extensions</li>
+<li>Code Formatting Extensions</li>
+<li>Documentation Formatting Extensions - Markdown</li>
+</ol>
+</li>
+<li>1 CI pipeline for code modules which runs:<!-- -->
+<ol>
+<li>Automated tests for each PR</li>
+<li>Creation of build packages</li>
+<li>Static code analyzer checks</li>
+<li>Security scanning for vulnerabilities</li>
+</ol>
+</li>
+<li>1 CI pipeline for documentation which runs:<!-- -->
+<ol>
+<li>Lint checks</li>
+<li>Formatting checks</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>⚠️<!-- --> <strong>Note:</strong> In scenarios such as</p>
+<ol>
+<li>Non-availability of security scanning tools for LabVIEW</li>
+<li>Non-availability of documentation inside repository, etc.</li>
+</ol>
+<p>Project tech leads can have conversation with Cohort Leads to take exception
+from the above non-negotiable list as needed. However any tools that needs to
+be developed for technical improvement, will be captured in corresponding
+project backlog or TechOps team&#x27;s backlog after minimal definition, analysis
+and ball park estimate to get an exception.</p>
+</blockquote>
+<h1>Frequently Asked Questions (FAQs)</h1>
+<blockquote>
+<p><strong>CI 001 - How much time is needed for setting up CI pipeline? Is it one time
+or recurring investment?</strong></p>
+</blockquote>
+<ul>
+<li>
+<p>Time required to create a new CI pipeline can vary depending on the complexity
+of the project and the tools used. AzDO pipelines and GitHub Actions are
+popular tools for building CI/CD pipelines, and it is known for its ease of
+use and simplicity. One-time investment includes the time required to set up
+the pipeline initially, while the recurring investment includes the time
+required to maintain and update the pipeline.</p>
+<ul>
+<li>One-time investment - Typically it would take few days - few weeks per
+pipeline setup initially. And a project can have many pipelines setup for
+different modules across code files, documentation files, etc.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p><strong>CI 002 - What are some common pitfalls when starting to adopt CI?</strong></p>
+</blockquote>
+<ul>
+<li>DORA Continuous integration practice has a good list of
+<a href="https://dora.dev/devops-capabilities/technical/continuous-integration/#common-pitfalls" target="_blank" rel="noopener noreferrer">common pitfalls</a>
+that can affect adoption of CI</li>
+</ul>
+<hr>
+<blockquote>
+<p><strong>CI 003 - What are some common challenges when starting CI and how can I
+overcome them?</strong></p>
+</blockquote>
+<ol>
+<li>
+<p><em>Mindset shift</em> - Adopting a CI/CD pipeline requires a culture shift, and it
+can be challenging to ensure that everyone on the team is aligned with the
+new approach. It is important to ensure that everyone understands the
+benefits of the pipeline and is committed to making it work</p>
+</li>
+<li>
+<p><em>Large project dilemma</em> - A single CI/CD pipeline is often not recommended
+for a large project, especially those that are developed on a global level in
+big companies. In such cases, it is recommended to break down the project
+into smaller components and create separate pipelines for each component</p>
+</li>
+<li>
+<p><em>Resource Management</em> - Resource management is generally not an issue while
+working on a smaller project. However, as the project grows, it becomes
+increasingly important to manage resources effectively. This includes
+managing the number of build agents, parallel builds, and other resources. We
+can align with customers&#x27; central team and internal TechOps team to sort out
+these issues on a case by case basis.</p>
+</li>
+<li>
+<p><em>Lack of expertise</em> - CI/CD pipelines require a certain level of expertise to
+set up and maintain. Teams may face challenges if they do not have the
+necessary skills or experience to work with the tools used in the pipeline.
+We can take help and guidance from TechOps team to overcome this challenge
+based on project size and complexity</p>
+</li>
+</ol>
+<hr></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/category/continousintergration"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">ContinousIntergration</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/category/docker"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Docker</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#understanding" class="table-of-contents__link toc-highlight">Understanding</a><ul><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#why" class="table-of-contents__link toc-highlight">Why?</a></li><li><a href="#what-will-be-the-impacts-of-ci" class="table-of-contents__link toc-highlight">What will be the impacts of CI?</a></li><li><a href="#key-differences-between-continuous-integration-ci-continuous-deployment-cd-and-continuous-delivery" class="table-of-contents__link toc-highlight">Key differences between Continuous Integration (CI), Continuous Deployment (CD) and Continuous Delivery</a></li><li><a href="#pre-requisites-for-effectiveness" class="table-of-contents__link toc-highlight">Pre-requisites for effectiveness</a></li><li><a href="#risks-of-not-following" class="table-of-contents__link toc-highlight">Risks of not following</a></li></ul></li><li><a href="#implementation" class="table-of-contents__link toc-highlight">Implementation</a><ul><li><a href="#stage-1---automate-in-local" class="table-of-contents__link toc-highlight">Stage 1 - Automate in local</a></li><li><a href="#stage-2---setup-pipelines" class="table-of-contents__link toc-highlight">Stage 2 - Setup pipelines</a></li><li><a href="#stage-3---report--fix" class="table-of-contents__link toc-highlight">Stage 3 - Report &amp; Fix</a></li><li><a href="#non-negotiable-items" class="table-of-contents__link toc-highlight">Non-negotiable items</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

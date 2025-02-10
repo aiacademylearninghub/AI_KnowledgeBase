@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-RAG360/Generation/Prompting Techniques/Overview" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">Overview | Knowledge Base</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="http://localhost:8000/docs/RAG360/Generation/Prompting Techniques/Overview"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Overview | Knowledge Base"><meta data-rh="true" name="description" content="What Are Prompting Techniques?"><meta data-rh="true" property="og:description" content="What Are Prompting Techniques?"><link data-rh="true" rel="canonical" href="http://localhost:8000/docs/RAG360/Generation/Prompting Techniques/Overview"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/RAG360/Generation/Prompting Techniques/Overview" hreflang="en"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/RAG360/Generation/Prompting Techniques/Overview" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Knowledge Base RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Knowledge Base Atom Feed"><link rel="stylesheet" href="/assets/css/styles.c2084c17.css">
+<script src="/assets/js/runtime~main.37b74131.js" defer="defer"></script>
+<script src="/assets/js/main.68f49705.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Home Page</b></a><a class="navbar__item navbar__link" href="/docs/category/fundamentals">AI HUB</a><a class="navbar__item navbar__link" href="/docs/category/continousintergration">DevOps</a><a class="navbar__item navbar__link" href="/blog">Authors</a></div><div class="navbar__items navbar__items--right"><a href="https://sudeeparyan.github.io/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Webiste<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input"><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/RAG360/Introduction">Introduction</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/RAG360/Fundamentals of RAG">Fundamentals of RAG</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/types-of-rag">Types of RAG</a><button aria-label="Expand sidebar category &#x27;Types of RAG&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/data-ingestion">Data Ingestion</a><button aria-label="Expand sidebar category &#x27;Data Ingestion&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/retrieval">Retrieval</a><button aria-label="Expand sidebar category &#x27;Retrieval&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/generation">Generation</a><button aria-label="Collapse sidebar category &#x27;Generation&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/RAG360/Generation/Overview">Overview</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/docs/category/types-of-generation">Types of Generation</a><button aria-label="Expand sidebar category &#x27;Types of Generation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/RAG360/Generation/Grounding">Grounding</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" tabindex="0" href="/docs/category/prompting-techniques">Prompting Techniques</a><button aria-label="Collapse sidebar category &#x27;Prompting Techniques&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/RAG360/Generation/Prompting Techniques/Overview">Overview</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/RAG360/Generation/Prompting Techniques/Chain of Thoughts">Chain of Thoughts</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/RAG360/Generation/Prompting Techniques/Tree of Thoughts">Tree of Thoughts</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/docs/category/model-1">Model</a><button aria-label="Expand sidebar category &#x27;Model&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/RAG360/Generation/Improvements">Improvements</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/docs/category/security">Security</a><button aria-label="Expand sidebar category &#x27;Security&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/evaluation">Evaluation</a><button aria-label="Expand sidebar category &#x27;Evaluation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/tracking">Tracking</a><button aria-label="Expand sidebar category &#x27;Tracking&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/challenges-in-rag">Challenges in RAG</a><button aria-label="Expand sidebar category &#x27;Challenges in RAG&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/RAG360/Project Checklist">Project Checklist</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/generation"><span itemprop="name">Generation</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/prompting-techniques"><span itemprop="name">Prompting Techniques</span></a><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Overview</span><meta itemprop="position" content="3"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Overview</h1></header><h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-are-prompting-techniques">What Are Prompting Techniques?<a href="#what-are-prompting-techniques" class="hash-link" aria-label="Direct link to What Are Prompting Techniques?" title="Direct link to What Are Prompting Techniques?">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="explanation">Explanation<a href="#explanation" class="hash-link" aria-label="Direct link to Explanation" title="Direct link to Explanation">​</a></h4>
+<ol>
+<li>
+<p>Prompting techniques refer to the strategies used to frame inputs or
+questions for AI models like RAG (Retrieval-Augmented Generation).</p>
+</li>
+<li>
+<p>These techniques ensure that the model understands the query correctly and
+produces accurate and relevant outputs. The goal is to guide the AI in
+generating responses that meet specific user needs.</p>
+</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="context">Context<a href="#context" class="hash-link" aria-label="Direct link to Context" title="Direct link to Context">​</a></h4>
+<ol>
+<li>
+<p>In the context of AI-driven applications, prompting techniques play a
+critical role in obtaining precise, structured, and useful outputs.</p>
+</li>
+<li>
+<p>Properly formulated prompts can greatly enhance the efficiency and accuracy
+of AI systems, especially in complex tasks requiring detailed responses.</p>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-do-we-need-prompting-techniques">Why Do We Need Prompting Techniques?<a href="#why-do-we-need-prompting-techniques" class="hash-link" aria-label="Direct link to Why Do We Need Prompting Techniques?" title="Direct link to Why Do We Need Prompting Techniques?">​</a></h3>
+<ol>
+<li>
+<p>AI models, including RAG, can sometimes produce ambiguous, irrelevant, or
+incomplete answers if the prompts are unclear or poorly structured.</p>
+</li>
+<li>
+<p>Without proper prompting techniques, the outputs may not align with the
+user&#x27;s intentions, leading to inefficiencies and errors.</p>
+</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="use-cases">Use Cases<a href="#use-cases" class="hash-link" aria-label="Direct link to Use Cases" title="Direct link to Use Cases">​</a></h4>
+<table class="table-size-for-cloud-services"><thead><tr><th>Factor</th><th>Description</th></tr></thead><tbody><tr><td><span class="custom-header">Data Extraction</span></td><td>For structured data extraction tasks, like retrieving information from a database or generating a report in a specific format (e.g., JSON), proper prompting ensures that the output is consistent and reliable.</td></tr><tr><td><span class="custom-header">Content Generation</span></td><td>When generating content like articles, code snippets, or summaries, effective prompting can guide the model to produce more accurate and relevant content, avoiding off-topic or poorly structured results.</td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="benefits">Benefits<a href="#benefits" class="hash-link" aria-label="Direct link to Benefits" title="Direct link to Benefits">​</a></h4>
+<table class="table-size-for-cloud-services"><thead><tr><th>Factor</th><th>Description</th></tr></thead><tbody><tr><td><span class="custom-header">Clarity</span></td><td>Clear and specific prompts help reduce ambiguity in the AI&#x27;s understanding, leading to more accurate outputs.</td></tr><tr><td><span class="custom-header">Efficiency</span></td><td>By using structured outputs and clear instructions, tasks are completed more quickly and with fewer errors.</td></tr><tr><td><span class="custom-header">Scalability</span></td><td>These techniques can be applied to more complex or large-scale tasks, ensuring consistency across different scenarios.</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="advantages-and-disadvantages">Advantages and Disadvantages<a href="#advantages-and-disadvantages" class="hash-link" aria-label="Direct link to Advantages and Disadvantages" title="Direct link to Advantages and Disadvantages">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="advantages"><strong>Advantages</strong><a href="#advantages" class="hash-link" aria-label="Direct link to advantages" title="Direct link to advantages">​</a></h4>
+<table class="table-size-for-cloud-services"><thead><tr><th>Factor</th><th>Description</th></tr></thead><tbody><tr><td><span class="custom-header">Efficiency</span></td><td>Well-structured prompts save time by minimizing misunderstandings and the need for multiple iterations. For example, using delimiters to separate different parts of a prompt makes it easier for the model to process and respond accurately.</td></tr><tr><td><span class="custom-header">Understanding</span></td><td>Prompting techniques simplify complex tasks, making them easier to manage. By asking the model to work through its own solutions or provide structured outputs, users can ensure that the model&#x27;s responses are more thoughtful and aligned with their needs.</td></tr><tr><td><span class="custom-header">Scalability</span></td><td>These techniques are adaptable to various scenarios, whether simple or complex. Few-shot prompting, for instance, allows the model to learn from examples, improving its performance on similar tasks in the future.</td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="disadvantages"><strong>Disadvantages</strong><a href="#disadvantages" class="hash-link" aria-label="Direct link to disadvantages" title="Direct link to disadvantages">​</a></h4>
+<table class="table-size-for-cloud-services"><thead><tr><th>Factor</th><th>Description</th></tr></thead><tbody><tr><td><span class="custom-header">Complexity</span></td><td>Developing effective prompts requires an understanding of the AI model&#x27;s behavior and capabilities, which can be challenging for users without technical expertise.</td></tr><tr><td><span class="custom-header">Resource Usage</span></td><td>Complex prompting techniques, like multi-step instructions or condition checking, may require more processing time and computational resources.</td></tr><tr><td><span class="custom-header">Limitations</span></td><td>While prompting techniques can greatly enhance model performance, they may not fully eliminate the possibility of errors, especially in highly complex or novel scenarios.</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="principles">Principles<a href="#principles" class="hash-link" aria-label="Direct link to Principles" title="Direct link to Principles">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="common-principles-for-writing-effective-prompts">Common Principles for Writing Effective Prompts<a href="#common-principles-for-writing-effective-prompts" class="hash-link" aria-label="Direct link to Common Principles for Writing Effective Prompts" title="Direct link to Common Principles for Writing Effective Prompts">​</a></h4>
+<ol>
+<li>
+<p><strong>Principle 1: Write Clear and Specific Instructions</strong></p>
+<p>Ensure that the instructions provided to the model are unambiguous, clear,
+and detailed. This enhances the accuracy and relevance of the model&#x27;s
+output.</p>
+</li>
+<li>
+<p><strong>Principle 2: Give the Model Time to “Think”</strong>
+Allow the model to process the input thoroughly before generating a
+response. This involves breaking down tasks and encouraging a step-by-step
+approach to ensure a well-considered output.</p>
+</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="principle-1-write-clear-and-specific-instructions">Principle 1: Write Clear and Specific Instructions<a href="#principle-1-write-clear-and-specific-instructions" class="hash-link" aria-label="Direct link to Principle 1: Write Clear and Specific Instructions" title="Direct link to Principle 1: Write Clear and Specific Instructions">​</a></h4>
+<ol>
+<li>
+<p><strong>Tactic 1: Use Delimiters to Clearly Indicate Distinct Parts of the Input</strong></p>
+<ol>
+<li><strong>Good Example:</strong></li>
+</ol>
+<div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token string" style="color:rgb(255, 121, 198)">&quot;&quot;</span><span class="token plain">&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token maybe-class-name">Part</span><span class="token plain"> </span><span class="token number">1</span><span class="token operator">:</span><span class="token plain"> </span><span class="token maybe-class-name">Provide</span><span class="token plain"> a summary </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">of</span><span class="token plain"> the article</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token property-access maybe-class-name">Part</span><span class="token plain"> </span><span class="token number">2</span><span class="token operator">:</span><span class="token plain"> </span><span class="token maybe-class-name">List</span><span class="token plain"> three key points</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token string" style="color:rgb(255, 121, 198)">&quot;&quot;</span><span class="token plain">&quot;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>This uses delimiters to clearly separate the tasks, making the input easy to
+follow.</p>
+<ol start="2">
+<li><strong>Bad Example:</strong></li>
+</ol>
+<p><code>&quot;Summarize the article and list three key points without any clear separation.&quot; </code></p>
+<p>Without delimiters, the model might conflate the two tasks, leading to a less
+organized response.</p>
+</li>
+<li>
+<p><strong>Tactic 2: Ask for a Structured Output (JSON, HTML)</strong></p>
+<ol>
+<li><strong>Good Example:</strong><br>
+<!-- -->&quot;Please provide the output in the following JSON format:</li>
+</ol>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">{</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    &#x27;summary&#x27;: &#x27;...&#x27;,</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    &#x27;key_points&#x27;: [&#x27;point1&#x27;, &#x27;point2&#x27;, &#x27;point3&#x27;]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">}</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">```&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">This instruction clearly specifies the format, ensuring the output is easy to parse.</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ol start="2">
+<li><strong>Bad Example:</strong><br>
+<code>&quot;Summarize the article and list the key points.&quot;</code> Without specifying a
+format, the response could be unstructured, making it difficult to use
+programmatically.</li>
+</ol>
+</li>
+<li>
+<p><strong>Tactic 3: Ask the Model to Check Whether Conditions Are Satisfied</strong></p>
+<ol>
+<li>
+<p><strong>Good Example:</strong><br>
+<!-- -->&quot;Before proceeding, check if the input is a valid JSON string. If it is,
+extract the values; if not, return an error message.&quot;<br>
+<!-- -->This instruction ensures that the model verifies the input before performing
+any actions, reducing the chance of errors.</p>
+</li>
+<li>
+<p><strong>Bad Example:</strong><br>
+<!-- -->&quot;Extract values from the input without validating its format.&quot;<br>
+<!-- -->This can lead to errors if the input is not in the expected format.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Tactic 4: &quot;Few-Shot&quot; Prompting</strong></p>
+<ol>
+<li>
+<p><strong>Good Example:</strong><br>
+<!-- -->&quot;Here are two examples of summaries for articles. Use them as a reference to
+summarize the new article:<br>
+<!-- -->Example 1: [Summary of Article 1]<br>
+<!-- -->Example 2: [Summary of Article 2]&quot;<br>
+<!-- -->This provides clear examples, guiding the model towards the desired output.</p>
+</li>
+<li>
+<p><strong>Bad Example:</strong><br>
+<!-- -->&quot;Summarize the article.&quot;<br>
+<!-- -->Without examples, the model might produce an output that does not meet the
+user&#x27;s expectations.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="principle-2-give-the-model-time-to-think">Principle 2: Give the Model Time to “Think”<a href="#principle-2-give-the-model-time-to-think" class="hash-link" aria-label="Direct link to Principle 2: Give the Model Time to “Think”" title="Direct link to Principle 2: Give the Model Time to “Think”">​</a></h4>
+<ol>
+<li>
+<p><strong>Tactic 1: Specify the Steps Required to Complete a Task</strong></p>
+<ol>
+<li>
+<p><strong>Good Example:</strong><br>
+<!-- -->&quot;Step 1: Read the article.<br>
+<!-- -->Step 2: Identify the main theme.<br>
+<!-- -->Step 3: Summarize the key points.<br>
+<!-- -->Step 4: Conclude with your analysis.&quot;<br>
+<!-- -->Breaking down the task ensures that each aspect is thoroughly considered.</p>
+</li>
+<li>
+<p><strong>Bad Example:</strong><br>
+<!-- -->&quot;Read the article and summarize it.&quot;<br>
+<!-- -->This instruction might lead to a summary that overlooks important aspects of
+the article.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Tactic 2: Instruct the Model to Work Out Its Own Solution Before Rushing to a Conclusion</strong></p>
+<ol>
+<li>
+<p><strong>Good Example:</strong><br>
+<!-- -->&quot;Consider different ways to solve the problem, then choose the best approach
+and explain why.&quot;<br>
+<!-- -->This encourages the model to think critically and consider multiple options
+before settling on a solution.</p>
+</li>
+<li>
+<p><strong>Bad Example:</strong><br>
+<!-- -->&quot;Solve the problem quickly.&quot;<br>
+<!-- -->This might lead to a hasty and potentially inaccurate response.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Tactic 3: Asking Series of Questions</strong></p>
+<ol>
+<li>
+<p><strong>Good Example:</strong><br>
+<!-- -->&quot;What are the potential causes? What are the possible solutions? Which
+solution is most feasible and why?&quot;<br>
+<!-- -->Asking a series of questions helps the model explore different angles and
+arrive at a well-rounded conclusion.</p>
+</li>
+<li>
+<p><strong>Bad Example:</strong><br>
+<!-- -->&quot;What is the solution to the problem?&quot;<br>
+<!-- -->A single question might lead to a narrow or incomplete answer.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="example">Example<a href="#example" class="hash-link" aria-label="Direct link to Example" title="Direct link to Example">​</a></h3>
+<p>Implementing Prompting Techniques</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="situation"><strong>Situation</strong><a href="#situation" class="hash-link" aria-label="Direct link to situation" title="Direct link to situation">​</a></h4>
+<p>A user wants to generate a report in JSON format that includes data on customer
+purchases from an e-commerce platform. The goal is to ensure that the output is
+structured correctly and includes all relevant details.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="stepsworkflow"><strong>Steps/Workflow</strong><a href="#stepsworkflow" class="hash-link" aria-label="Direct link to stepsworkflow" title="Direct link to stepsworkflow">​</a></h4>
+<ol>
+<li>
+<p><strong>Write Clear and Specific Instructions</strong></p>
+<ol>
+<li>Use delimiters to separate different sections of the prompt, e.g.,
+“Customer Purchase Report” and “Include details: [Date, Item, Quantity, Price].”</li>
+<li>Request the output in JSON format to ensure it is structured and easy to
+parse.</li>
+</ol>
+</li>
+<li>
+<p><strong>Give the Model Time to “Think”</strong></p>
+<ol>
+<li>Break down the task into smaller steps, asking the model first to list all
+purchases, then to format them correctly.</li>
+<li>Instruct the model to validate that all data fields are complete before
+finalizing the report.</li>
+</ol>
+</li>
+</ol>
+<p><strong>Outcome</strong></p>
+<ol>
+<li>
+<p>The model generates a structured JSON report that accurately reflects the
+required data, with clear, organized fields.</p>
+</li>
+<li>
+<p>The use of delimiters and structured output instructions ensures consistency,
+while the step-by-step approach reduces errors, leading to a reliable and
+usable report.</p>
+</li>
+</ol>
+<hr>
+<p>By following these principles and using the described tactics, users can
+effectively guide AI models like RAG to produce high-quality outputs that meet
+their specific needs, enhancing both the efficiency and reliability of the
+system.</p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/category/prompting-techniques"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Prompting Techniques</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/RAG360/Generation/Prompting Techniques/Chain of Thoughts"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Chain of Thoughts</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#what-are-prompting-techniques" class="table-of-contents__link toc-highlight">What Are Prompting Techniques?</a></li><li><a href="#why-do-we-need-prompting-techniques" class="table-of-contents__link toc-highlight">Why Do We Need Prompting Techniques?</a></li><li><a href="#advantages-and-disadvantages" class="table-of-contents__link toc-highlight">Advantages and Disadvantages</a></li><li><a href="#principles" class="table-of-contents__link toc-highlight">Principles</a></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

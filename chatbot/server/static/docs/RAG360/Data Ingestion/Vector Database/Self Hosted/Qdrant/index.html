@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-RAG360/Data Ingestion/Vector Database/Self Hosted/Qdrant" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">Qdrant | Knowledge Base</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="http://localhost:8000/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="http://localhost:8000/docs/RAG360/Data Ingestion/Vector Database/Self Hosted/Qdrant"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Qdrant | Knowledge Base"><meta data-rh="true" name="description" content="Qdrant vector store"><meta data-rh="true" property="og:description" content="Qdrant vector store"><link data-rh="true" rel="canonical" href="http://localhost:8000/docs/RAG360/Data Ingestion/Vector Database/Self Hosted/Qdrant"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/RAG360/Data Ingestion/Vector Database/Self Hosted/Qdrant" hreflang="en"><link data-rh="true" rel="alternate" href="http://localhost:8000/docs/RAG360/Data Ingestion/Vector Database/Self Hosted/Qdrant" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Knowledge Base RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Knowledge Base Atom Feed"><link rel="stylesheet" href="/assets/css/styles.c2084c17.css">
+<script src="/assets/js/runtime~main.37b74131.js" defer="defer"></script>
+<script src="/assets/js/main.68f49705.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Home Page</b></a><a class="navbar__item navbar__link" href="/docs/category/fundamentals">AI HUB</a><a class="navbar__item navbar__link" href="/docs/category/continousintergration">DevOps</a><a class="navbar__item navbar__link" href="/blog">Authors</a></div><div class="navbar__items navbar__items--right"><a href="https://sudeeparyan.github.io/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Webiste<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input"><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/RAG360/Introduction">Introduction</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/RAG360/Fundamentals of RAG">Fundamentals of RAG</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/types-of-rag">Types of RAG</a><button aria-label="Expand sidebar category &#x27;Types of RAG&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/data-ingestion">Data Ingestion</a><button aria-label="Collapse sidebar category &#x27;Data Ingestion&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/RAG360/Data Ingestion/Overview">Overview</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/docs/category/data-preparation">Data Preparation</a><button aria-label="Expand sidebar category &#x27;Data Preparation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/docs/category/chunking">Chunking</a><button aria-label="Expand sidebar category &#x27;Chunking&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/docs/category/embedding">Embedding</a><button aria-label="Expand sidebar category &#x27;Embedding&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" tabindex="0" href="/docs/category/vector-database">Vector Database</a><button aria-label="Collapse sidebar category &#x27;Vector Database&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/RAG360/Data Ingestion/Vector Database/Overview">Overview</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/docs/category/online-1">Online</a><button aria-label="Expand sidebar category &#x27;Online&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/docs/category/in-memory">In-Memory</a><button aria-label="Expand sidebar category &#x27;In-Memory&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" tabindex="0" href="/docs/category/self-hosted">Self Hosted</a><button aria-label="Collapse sidebar category &#x27;Self Hosted&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-4 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/RAG360/Data Ingestion/Vector Database/Self Hosted/Qdrant">Qdrant</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-4 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/RAG360/Data Ingestion/Vector Database/Self Hosted/Weaviate">Weaviate</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-4 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/RAG360/Data Ingestion/Vector Database/Self Hosted/Milvus">Milvus</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/RAG360/Data Ingestion/Vector Database/Comparisons">Comparisons</a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/retrieval">Retrieval</a><button aria-label="Expand sidebar category &#x27;Retrieval&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/generation">Generation</a><button aria-label="Expand sidebar category &#x27;Generation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/evaluation">Evaluation</a><button aria-label="Expand sidebar category &#x27;Evaluation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/tracking">Tracking</a><button aria-label="Expand sidebar category &#x27;Tracking&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/challenges-in-rag">Challenges in RAG</a><button aria-label="Expand sidebar category &#x27;Challenges in RAG&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/RAG360/Project Checklist">Project Checklist</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/data-ingestion"><span itemprop="name">Data Ingestion</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/vector-database"><span itemprop="name">Vector Database</span></a><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/self-hosted"><span itemprop="name">Self Hosted</span></a><meta itemprop="position" content="3"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Qdrant</span><meta itemprop="position" content="4"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Qdrant</h1></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="qdrant-vector-store">Qdrant vector store<a href="#qdrant-vector-store" class="hash-link" aria-label="Direct link to Qdrant vector store" title="Direct link to Qdrant vector store">​</a></h2>
+<ol>
+<li>
+<p>Qdrant is an open-source vector similarity search engine and vector database
+designed to store, index, and query high-dimensional vectors efficiently.</p>
+</li>
+<li>
+<p>Currently Qdrant Vector store is supports multiple vector types like</p>
+<ol>
+<li>Dense vectors</li>
+<li>Sparse vectors</li>
+<li>Dense-uint8</li>
+<li>Matryoshka vectors</li>
+<li>Multi-vector representation using late interaction models</li>
+</ol>
+</li>
+<li>
+<p>Dense vectors can be created by models like Sentence transformers/Embedding
+models like OpenAI Ada - 002. Dense vectors are arrays that store each
+element in a contiguous block of memory. A dense vector typically contains a
+value for every dimension, and most of these values are non-zero.</p>
+</li>
+<li>
+<p>Sparse vectors is created by fastembed python library. Sparse vectors store
+only non-zero values and their corresponding indices. Most of the elements
+are assumed to be zero and only the non-zero values are explicitly
+represented.</p>
+</li>
+<li>
+<p>Supported models by fastembed to create sparse vectors</p>
+<ol>
+<li>Qdrant/BM25</li>
+<li>Qdrant/bm42-all-minilm-l6-v2-attentions</li>
+<li>prithivida/Splade_PP_en_v1</li>
+<li>For detailed information :
+<a href="https://qdrant.github.io/fastembed/examples/Supported_Models/#supported-sparse-text-embedding-models" target="_blank" rel="noopener noreferrer">Fastembed supported models</a></li>
+</ol>
+</li>
+<li>
+<p>By default in llama-index-vector-stores-qdrant, it uses
+prithivida/Splade_PP_en_v1 to create sparse vectors.</p>
+</li>
+<li>
+<p>While creating embeddings for Qdrant, by default the dense vectors alone will
+be generated. Time taken to create these embeddings is also less when
+compared to Weaviate. It supports only sematic search.</p>
+</li>
+<li>
+<p>To create sparse vectors, while initializing the vector store, we need pass
+an argument named enable_hybrid to True. <img decoding="async" loading="lazy" alt="image.png" src="/assets/images/qudrant1-9852640508893fffb9e0abd2995167b2.png" width="874" height="422" class="img_ev3q"></p>
+</li>
+<li>
+<p>Creating this sparse vectors, is taking more time than expected. It&#x27;s around
+3 to 4 times slower than time required by Weaviate when using Splade models,
+it can reduced when moving to the Qdrant/BM25 model.</p>
+</li>
+<li>
+<p>Once this sparse vector is created, we can decide whether we need similarity
+based results (dense vectors) or keyword based results (sparse vectors)
+based on the alpha value.</p>
+</li>
+<li>
+<p>When querying with hybrid mode, we can set similarity_top_k and sparse_top_k
+separately.</p>
+</li>
+<li>
+<p>sparse_top_k represents how many nodes will be retrieved from each dense and
+sparse query. For example, if sparse_top_k=5 is set, that means I will
+retrieve 5 nodes using sparse vectors and 5 nodes using dense vectors.
+similarity_top_k controls the final number of returned nodes. In the above
+setting, we end up with 10 nodes. A fusion algorithm is applied to rank and
+order the nodes from different vector spaces (relative score fusion by
+default with llama-index). similarity_top_k=2 means the top two nodes after
+fusion are returned.</p>
+</li>
+<li>
+<p>Once the vectors are generated, we also need to specify the batch_size, the
+number vectors that will be uploaded at a time, by default it is 64.</p>
+</li>
+<li>
+<p>Parallel - Number of parallel processes of upload. By default it is 1. We
+can specify based on the number of cores available in the system.
+<img decoding="async" loading="lazy" alt="image.png" src="/assets/images/qudrant2-695b32226391919cdc48a8c1c3ac029b.png" width="582" height="219" class="img_ev3q"></p>
+</li>
+<li>
+<p>Recommended configurations for 192.168.0.101 (Test PC) for generating sparse
+vectors</p>
+<ol>
+<li><code>batch_size = &lt;=10</code></li>
+<li>parallel - 2</li>
+</ol>
+</li>
+<li>
+<p>Qdrant provides UI support to see the available collections and visulaize
+the dense vectors in it. To access the dashboard,
+<code>{qdrant_app_service_url}</code>/dashboard and inside that enter the secret api
+key to access the collections.</p>
+</li>
+<li>
+<p>The backup in the Qdrant vector store is called snapshot. We can configure
+in the Azure service, to take snapshots of collections on the regular
+intervals or download it manually.</p>
+</li>
+<li>
+<p>The configuration for Qdrant can be still optimized by
+<a href="https://qdrant.tech/documentation/guides/configuration/" target="_blank" rel="noopener noreferrer">config.yaml</a> file.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="test-results">Test results<a href="#test-results" class="hash-link" aria-label="Direct link to Test results" title="Direct link to Test results">​</a></h2>
+<p>The below test results are done with Qdrant <code>version &lt;1.9</code> and
+prithivida/Splade_PP_en_v1 for Sparse vectors</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="embedding-method-configuration">Embedding Method Configuration<a href="#embedding-method-configuration" class="hash-link" aria-label="Direct link to Embedding Method Configuration" title="Direct link to Embedding Method Configuration">​</a></h3>
+<table><thead><tr><th>Embedding Method</th><th>Batch Size</th><th>Vector Store</th><th>Hybrid Search Enabled</th><th>Time Consumption for Embedding</th></tr></thead><tbody><tr><td>Injestion pipeline running locally with PyPDF Reader</td><td>20</td><td>Qdrant</td><td>False</td><td>Around 30 s</td></tr><tr><td>Injestion pipeline running locally with PyPDF Reader</td><td>20</td><td>Qdrant</td><td>True</td><td>Around 7 minutes 30 s</td></tr><tr><td>Injestion pipeline running locally with PyPDF Reader</td><td>20</td><td>Weaviate</td><td>True</td><td>Around 45 s</td></tr><tr><td>Injestion pipeline running locally with PyPDF Reader</td><td>20</td><td>Weaviate</td><td>False</td><td>Around 45 s</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="embedding-method-performance">Embedding Method Performance<a href="#embedding-method-performance" class="hash-link" aria-label="Direct link to Embedding Method Performance" title="Direct link to Embedding Method Performance">​</a></h3>
+<table><thead><tr><th>Embedding Method</th><th>Vector Store</th><th>Hybrid Search Enabled</th><th>Expected Answer Relevance Score</th><th>Context Relevance Score</th><th>Answer Relevance Score</th><th>No of Questions with &quot;I couldn&#x27;t find answer&quot;</th></tr></thead><tbody><tr><td>Injestion pipeline running locally with PyPDF Reader</td><td>Qdrant</td><td>False</td><td>0.59</td><td>0.82</td><td>0.85</td><td>7</td></tr><tr><td>Injestion pipeline running locally with PyPDF Reader</td><td>Qdrant</td><td>True</td><td>0.61</td><td>0.88</td><td>0.88</td><td>5</td></tr><tr><td>Injestion pipeline running locally with PyPDF Reader</td><td>Weaviate</td><td>True</td><td>0.59</td><td>0.86</td><td>0.82</td><td>8</td></tr><tr><td>Injestion pipeline running locally with PyPDF Reader</td><td>Weaviate</td><td>False</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="advantages">Advantages<a href="#advantages" class="hash-link" aria-label="Direct link to Advantages" title="Direct link to Advantages">​</a></h3>
+<ol>
+<li>SPLADE is supported in Qdrant.</li>
+<li>Collections are not lost if we use App Service, but can create snapshots of
+collections.</li>
+<li>Qdrant supports multiple vector types</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="disadvantages">Disadvantages<a href="#disadvantages" class="hash-link" aria-label="Direct link to Disadvantages" title="Direct link to Disadvantages">​</a></h3>
+<ol>
+<li>Time taken to create embeddings and retrieve embeddings is quite high when
+using Splade models for Sparse vectors. It can be rectified by BM25 models</li>
+<li>With Qdrant collections are mapped with Azure File Share and App Service
+restarts for maintenance - App Service takes a longer time to restore the
+collections from File Share to App Service container.The time to restore
+depends on the size of the collections.This restore time has a conflict with
+the Azure App Service start-up time value(Max-startup time for Azure App
+service - 30 minutes).</li>
+</ol></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/category/self-hosted"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Self Hosted</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/RAG360/Data Ingestion/Vector Database/Self Hosted/Weaviate"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Weaviate</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#qdrant-vector-store" class="table-of-contents__link toc-highlight">Qdrant vector store</a></li><li><a href="#test-results" class="table-of-contents__link toc-highlight">Test results</a><ul><li><a href="#embedding-method-configuration" class="table-of-contents__link toc-highlight">Embedding Method Configuration</a></li><li><a href="#embedding-method-performance" class="table-of-contents__link toc-highlight">Embedding Method Performance</a></li><li><a href="#advantages" class="table-of-contents__link toc-highlight">Advantages</a></li><li><a href="#disadvantages" class="table-of-contents__link toc-highlight">Disadvantages</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
