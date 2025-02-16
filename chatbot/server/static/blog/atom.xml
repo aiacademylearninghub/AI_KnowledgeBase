@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://localhost:8000/blog</id>
-    <title>Knowledge Base Blog</title>
+    <title>AI Knowledge Base Blog</title>
     <updated>2024-10-19T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://localhost:8000/blog"/>
-    <subtitle>Knowledge Base Blog</subtitle>
+    <subtitle>AI Knowledge Base Blog</subtitle>
     <entry>
         <title type="html"><![CDATA[Authors]]></title>
         <id>http://localhost:8000/blog/welcome</id>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Tabs, Tab, Box } from '@mui/material';
 import GraphComponent from '../Graph/NewGraph';
-import DecisionTree from '../decisionTree/DecisionTree';
+import DecisionTree from '../BuildArchitecture/decisionTree/DecisionTree';
 import './Homepage.css';
 
 const Homepage = () => {

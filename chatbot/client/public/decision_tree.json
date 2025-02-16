@@ -13,11 +13,19 @@
     ]
   },
   "2": {
+    "block": {
+      "type": "replace",
+      "text": "Rule based system"
+    },
     "solution": "You can use rule based systems to solve your problem.",
     "next": null
   },
   "3": {
     "solution": "You can use AI based system",
+    "block": {
+      "type": "replace",
+      "text": "AI System"
+    },
     "question": "which category your problem falls into?",
     "choices": [
       {
@@ -27,8 +35,16 @@
       {
         "choice": "Data Classification",
         "next": 5
+      },
+      {
+        "choice": "Trading Bot",
+        "next": "trading_bot"
       }
     ]
+  },
+  "trading_bot": {
+    "solution": "Sample project got generated",
+    "template": "stock-market-bot"
   },
   "4": {
     "question": "is the data structured or unstructured?",
@@ -44,8 +60,13 @@
     ]
   },
   "14": {
+    "block": {
+      "type": "replace",
+      "text": "Generative AI System"
+    },
     "solution": "You can use Generative AI based system",
     "question": "Is the data is complex and interdependent?",
+    "template": "react-ai-chatbot",
     "choices": [
       {
         "choice": "yes",
@@ -58,25 +79,82 @@
     ]
   },
   "13": {
+    "block": {
+      "type": "append",
+      "text": "RAG Stages"
+    },
     "solution": "You can use Retrieval Augumented Generation",
     "title": "Stages of RAG",
     "stages": [
       {
         "stage": "Indexing",
+        "block": {
+          "type": "append",
+          "parent": "RAG Stages",
+          "text": "Indexing"
+        },
         "next": 4
       },
       {
         "stage": "Retrieval",
-        "next": null
+        "block": {
+          "type": "append",
+          "parent": "Indexing",
+          "text": "Retrieval"
+        },
+        "next": "retrieval"
       },
       {
         "stage": "Synthesis",
+        "block": {
+          "type": "append",
+          "parent": "Retrieval",
+          "text": "Synthesis"
+        },
         "next": null
       }
     ]
   },
+  "retrieval": {
+    "solution": "Prototype the solution provided and measure the retrieval performance and answer the question",
+    "question": "Is there any Issue in retrieval performance?",
+    "choices": [
+      {
+        "choice": "Expected Documents are not retrieved, retrieval query is complex",
+        "next": "query_decomposition"
+      },
+      {
+        "choice": "Expected Documents are not retrieved, but retrieval query looks good",
+        "next": "reranking"
+      },
+      {
+        "choice": "No Issues"
+      }
+    ]
+  },
+  "reranking": {
+    "solution": "Rerank the documents after retrieval",
+    "block": {
+      "type": "append",
+      "parent": "Retrieval",
+      "text": "Reranking"
+    }
+  },
+  "query_decomposition": {
+    "solution": "Decompose the retrieval query into subqueries using AI and retrieve the documents",
+    "block": {
+      "type": "append",
+      "parent": "Retrieval",
+      "text": "Query Decomposition"
+    }
+  },
   "10": {
     "solution": "You can use a ETL pipeline to process",
+    "block": {
+      "type": "append",
+      "parent": "Indexing",
+      "text": "ETL"
+    },
     "question": "Is the data is fixed or can be updated in runtime/periodically ?",
     "choices": [
       {
@@ -100,17 +178,81 @@
     "solution": "Trigger ETL on each data updation",
     "next": 11
   },
+  "chunking": {
+    "chunking": "Chunking is the process of dividing text into smaller pieces called chunks",
+    "question": "Do you need intelligence in chunking?",
+    "choices": [
+      {
+        "choice": "Yes",
+        "next": "semantic_chunking"
+      },
+      {
+        "choice": "No",
+        "next": 18
+      }
+    ]
+  },
+  "semantic_chunking": {
+    "solution": "You can use Semantic or Agentic chunking",
+    "block": {
+      "type": "append",
+      "parent": "Chunking",
+      "text": "Semantic Chunking"
+    }
+  },
+  "parsing": {
+    "question": "Is the document contains images?",
+    "choices": [
+      {
+        "choice": "Yes",
+        "next": "image_parsing"
+      },
+      {
+        "choice": "No"
+      }
+    ]
+  },
+  "image_parsing": {
+    "solution": "You can use OCR / Vision models to extract text from images",
+    "block": {
+      "type": "append",
+      "parent": "Parsing",
+      "text": "Image Parsing with OCR / AI"
+    }
+  },
   "11": {
     "title": "Stages of Ingestion",
+    "block": {
+      "type": "append",
+      "parent": "ETL",
+      "text": "Stages of Ingestion"
+    },
     "stages": [
       {
-        "stage": "Parsing"
+        "stage": "Parsing",
+        "block": {
+          "type": "append",
+          "parent": "ETL",
+          "text": "Parsing"
+        },
+        "next": "parsing"
       },
       {
-        "stage": "Chunking"
+        "stage": "Chunking",
+        "block": {
+          "type": "append",
+          "parent": "Parsing",
+          "text": "Chunking"
+        },
+        "next": "chunking"
       },
       {
-        "stage": "Embedding"
+        "stage": "Embedding",
+        "block": {
+          "type": "append",
+          "parent": "Chunking",
+          "text": "Embedding"
+        }
       }
     ]
   },

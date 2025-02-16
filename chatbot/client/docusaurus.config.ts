@@ -3,9 +3,9 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Knowledge Base",
+  title: "AI Knowledge Base",
   staticDirectories: ["static"],
-  tagline: "Welcome to the Sudeep Aryan's Knowledge Base",
+  tagline: "Welcome to the AI Knowledge Base",
   // favicon: "img/android-chrome-512x512.png",
 
   // Set the production url of your site here
@@ -17,7 +17,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "Sudeep Aryan", // Usually your GitHub org/user name.
-  projectName: "SudeepAryan_KnowledgeBase", // Usually your repo name.
+  projectName: "AI_KnowledgeBase", // Usually your repo name.
   onBrokenLinks: "ignore", 
   onBrokenMarkdownLinks: "warn",
 
@@ -122,8 +122,13 @@ const config: Config = {
         //   label: "Build Architecture",
         // },
         {
+          href: "https://ai-academy.onrender.com/",
+          label: "AI Academy",
+          position: "right",
+        },
+        {
           href: "https://sudeeparyan.github.io/",
-          label: "Webiste",
+          label: "Founder Webiste",
           position: "right",
         },
         { to: "/blog", label: "Authors", position: "left" },

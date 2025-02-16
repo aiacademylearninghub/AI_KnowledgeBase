@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "docusaurus build && powershell -ExecutionPolicy Bypass -File ./build_and_transfer.ps1",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -31,6 +31,7 @@
     "@mui/material": "^5.16.7",
     "@mui/x-tree-view": "^7.12.0",
     "clsx": "^2.0.0",
+    "codesandbox": "^2.2.3",
     "d3-force": "^3.0.0",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.8.3",
