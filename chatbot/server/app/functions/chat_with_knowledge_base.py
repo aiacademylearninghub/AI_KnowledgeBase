@@ -41,16 +41,20 @@ def get_file_paths_from_nodes(nodes):
     github_repo_path = "https://github.com/Sudeeparyan/Sudeep_Knowledge_Base/tree/master/chatbot/client/docs{file}"
     return [github_repo_path.format(file=node.metadata["filepath"]) for node in nodes]
 
-
-def get_answer(question: str, history: list[str] = []) -> dict[str, Any]:
-    """Get answer from the knowledge base."""
-    gemini = get_gemini_llm("gemini-pro")
-    nodes = retriever.invoke(question)
+def retriver_query(query: str) -> list:
+    """Get relevant nodes from the knowledge base."""
+    nodes = retriever.invoke(query)
     node_text = (
         format_nodes(nodes)
         if len(nodes) > 0
         else "No relevant information found in the knowledge base."
     )
+    return nodes, node_text
+
+def get_answer(question: str, history: list[str] = []) -> dict[str, Any]:
+    """Get answer from the knowledge base."""
+    gemini = get_gemini_llm("gemini-pro")
+    nodes, node_text = retriver_query(question)
     prompt = answer_from_knowledge_base_prompt_template.format(
         question=question, documentation=node_text, history=format_history(history)
     )

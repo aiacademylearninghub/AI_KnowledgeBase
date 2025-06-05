@@ -278,6 +278,7 @@ export default function DecisionTree() {
     decision_tree_data = decisionTreeJson;
     console.log(decision_tree_data);
     const root_node = buildTree("1");
+    console.log("Building tree...",root_node);
     setDecisionTreeData([root_node]);
     setNodeStack([root_node]);
   }, []);
